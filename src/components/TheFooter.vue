@@ -2,18 +2,27 @@
   <footer class="footer">
     <div class="footer-container container">
       <div class="footer-address">
-        <img class="footer-logo" src="@/assets/logo/logo-white.svg" alt="logo Gonzaga Sampaio">
-        Rua Emílio Blum, 131 - Ed. Hantei Office Building<br>
-        Bloco B, 7º andar, Sala 701<br>
-        Centro - Florianópolis, SC<br>
+        <img
+          class="footer-logo"
+          src="@/assets/logo/logo-white.svg"
+          alt="logo Gonzaga Sampaio"
+        />
+        Rua Emílio Blum, 131 - Ed. Hantei Office Building<br />
+        Bloco B, 7º andar, Sala 701<br />
+        Centro - Florianópolis, SC<br />
         CEP 88020-010
       </div>
       <div class="footer-contact">
-        <span>(48) 3333-7468 <span class="separator">|</span>(48) 99194-5415</span>
+        <span
+          >(48) 3333-7468 <span class="separator">|</span>(48) 99194-5415</span
+        >
         contato@gonzagasampaio.com.br
       </div>
       <div class="footer-social">
-        <a href="https://www.facebook.com/construtoragonzagasampaio/" target="_blank">
+        <a
+          href="https://www.facebook.com/construtoragonzagasampaio/"
+          target="_blank"
+        >
           <i class="fab fa-facebook-f fa-lg"></i>
         </a>
         <a href="http://instagram.com" target="_blank">
@@ -25,26 +34,25 @@
         <a href="http://instagram.com" target="_blank">
           <i class="fab fa-instagram fa-lg"></i>
         </a>
-      </div>      
+      </div>
     </div>
     <div class="copyright">
       © 2020 Construtora Gonzaga Sampaio
-    </div>  
+    </div>
   </footer>
 </template>
 
 <script>
-
 export default {
-  name: 'TheFooter'
-}
+  name: "TheFooter"
+};
 </script>
 
 <style>
 .footer {
   background-color: var(--main-color);
-  color: #FFF;
-  font-size: .8em;
+  color: #fff;
+  font-size: 0.8em;
   font-weight: 300;
   line-height: 1.5em;
   padding-top: 4em;
@@ -113,5 +121,4 @@ export default {
     padding: 0 0 3em;
   }
 }
-
 </style>

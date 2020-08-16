@@ -2,44 +2,55 @@
   <header class="header">
     <div class="header-container container">
       <router-link to="/">
-        <img class="header-logo" src="@/assets/logo/logo-white-blue.png" alt="logo Gonzaga Sampaio">
+        <img
+          class="header-logo"
+          src="@/assets/logo/logo-white-blue.png"
+          alt="logo Gonzaga Sampaio"
+        />
       </router-link>
-      <label for="menu-toggle" class="responsive-menu"><i class="fas fa-bars fa-2x"></i></label>
-      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="responsive-menu"
+        ><i class="fas fa-bars fa-2x"></i
+      ></label>
+      <input type="checkbox" id="menu-toggle" />
       <div class="nav-wrapper">
         <ul class="nav">
-            <router-link to="/quem-somos"><li>Quem Somos</li></router-link>
-            <router-link to="/empreendimentos"><li>Empreendimentos</li></router-link>
-            <router-link to="/fale-conosco"><li>Fale Conosco</li></router-link>
-            <router-link to="/blog"><li>Blog</li></router-link>
-        </ul>     
+          <router-link to="/quem-somos"><li>Quem Somos</li></router-link>
+          <router-link to="/empreendimentos"
+            ><li>Empreendimentos</li></router-link
+          >
+          <router-link to="/fale-conosco"><li>Fale Conosco</li></router-link>
+          <router-link to="/blog"><li>Blog</li></router-link>
+        </ul>
       </div>
     </div>
   </header>
 </template>
 
 <script>
-
 export default {
-  name: 'HeaderWhite'
-}
+  name: "HeaderWhite"
+};
 </script>
 
 <style>
 .header {
-    position: absolute;
-    z-index: 2;
-    background: linear-gradient(180deg, rgba(18,34,50,0.5) 0%, rgba(18,34,50,0) 100%);
-    width: 100%;
-    height: 200px;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 34, 50, 0.5) 0%,
+    rgba(18, 34, 50, 0) 100%
+  );
+  width: 100%;
+  height: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .header-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: .5em 0;
+  padding: 0.5em 0;
 }
 
 .header-logo {
@@ -63,7 +74,7 @@ export default {
 .nav li {
   text-transform: uppercase;
   font-size: 0.8em;
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   padding: 0;
   margin: 0 1em;
@@ -78,7 +89,7 @@ export default {
   height: 1px;
   top: 100%;
   left: 0;
-  background: #FFF;
+  background: #fff;
   transition: transform 0.3s;
   transform: scaleX(0);
   transform-origin: center;
@@ -90,7 +101,7 @@ export default {
 }
 
 .responsive-menu {
-  color: #FFF;
+  color: #fff;
   text-align: right;
   display: none;
 }
@@ -106,7 +117,6 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-
   .responsive-menu {
     display: block;
     cursor: pointer;
@@ -134,7 +144,7 @@ export default {
     margin-top: 2em;
     padding-top: 1em;
   }
-  
+
   .nav li {
     margin: 2.5em 1.5em;
   }
@@ -143,5 +153,4 @@ export default {
     display: block;
   }
 }
-
 </style>

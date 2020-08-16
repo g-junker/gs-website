@@ -2,12 +2,10 @@ module.exports = {
   pluginOptions: {
     prerenderSpa: {
       registry: undefined,
-      renderRoutes: [
-        '/'
-      ],
+      renderRoutes: ["/", "/quem-somos"],
       useRenderEvent: true,
       headless: true,
       onlyProduction: true
     }
   }
-}
+};

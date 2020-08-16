@@ -3,20 +3,20 @@
     <div class="content">
       <router-view />
     </div>
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import TheFooter from './components/TheFooter';
-import '@/assets/style.css'
+import TheFooter from "@/components/TheFooter";
+import "@/assets/style.css";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TheFooter
   }
-}
+};
 </script>
 
 <style>
@@ -29,4 +29,3 @@ export default {
   flex: 1;
 }
 </style>
-

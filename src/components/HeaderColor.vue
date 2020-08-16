@@ -2,36 +2,41 @@
   <header class="header-color">
     <div class="header-color-container container">
       <router-link to="/">
-        <img class="header-logo" src="@/assets/logo/logo-color.png" alt="logo Gonzaga Sampaio">
+        <img
+          class="header-logo"
+          src="@/assets/logo/logo-color.png"
+          alt="logo Gonzaga Sampaio"
+        />
       </router-link>
       <ul class="nav-color">
-          <router-link to="/quem-somos"><li>Quem Somos</li></router-link>
-          <router-link to="/empreendimentos"><li>Empreendimentos</li></router-link>
-          <router-link to="/fale-conosco"><li>Fale Conosco</li></router-link>
-          <router-link to="/blog"><li>Blog</li></router-link>
-      </ul>      
+        <router-link to="/quem-somos"><li>Quem Somos</li></router-link>
+        <router-link to="/empreendimentos"
+          ><li>Empreendimentos</li></router-link
+        >
+        <router-link to="/fale-conosco"><li>Fale Conosco</li></router-link>
+        <router-link to="/blog"><li>Blog</li></router-link>
+      </ul>
     </div>
   </header>
 </template>
 
 <script>
-
 export default {
-  name: 'HeaderColor'
-}
+  name: "HeaderColor"
+};
 </script>
 
 <style>
 .header-color {
-    width: 100%;
-    box-shadow: -10px 0px 10px #00000033;
+  width: 100%;
+  box-shadow: -10px 0px 10px #00000033;
 }
 
 .header-color-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: .5em 0;
+  padding: 0.5em 0;
 }
 
 .header-color-logo {
@@ -85,5 +90,4 @@ export default {
     display: none;
   }
 }
-
 </style>

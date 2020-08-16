@@ -1,65 +1,64 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomePage from '../views/HomePage.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomePage from "@/views/HomePage.vue";
 
+Vue.use(VueRouter);
 
-Vue.use(VueRouter)
-
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'HomePage',
+    path: "/",
+    name: "HomePage",
     component: HomePage
   },
   {
-    path: '/quem-somos',
-    name: 'QuemSomos',
-    component: () => import('../views/QuemSomos.vue')
+    path: "/quem-somos",
+    name: "QuemSomos",
+    component: () => import("@/views/QuemSomos.vue")
   },
   {
-    path: '/empreendimentos',
-    name: 'NossosEmpreendimentos',
-    component: () => import('../views/NossosEmpreendimentos.vue')
+    path: "/empreendimentos",
+    name: "NossosEmpreendimentos",
+    component: () => import("@/views/NossosEmpreendimentos.vue")
   },
   {
-    path: '/empreendimentos/parque-da-lagoa',
-    name: 'ParqueDaLagoa',
-    component: () => import('../views/ParqueDaLagoa.vue')
+    path: "/empreendimentos/parque-da-lagoa",
+    name: "ParqueDaLagoa",
+    component: () => import("@/views/ParqueDaLagoa.vue")
   },
   {
-    path: '/empreendimentos/jardim-europa',
-    name: 'JardimEuropa',
-    component: () => import('../views/JardimEuropa.vue')
+    path: "/empreendimentos/jardim-europa",
+    name: "JardimEuropa",
+    component: () => import("@/views/JardimEuropa.vue")
   },
   {
-    path: '/fale-conosco',
-    name: 'FaleConosco',
-    component: () => import('../views/FaleConosco.vue')
+    path: "/fale-conosco",
+    name: "FaleConosco",
+    component: () => import("@/views/FaleConosco.vue")
   },
   {
-    path: '/blog',
-    name: 'Blog',
-    component: () => import('../views/TheBlog.vue')
+    path: "/blog",
+    name: "Blog",
+    component: () => import("@/views/TheBlog.vue")
   },
   {
-    path: '/blog-post',
-    name: 'TheBlogPost',
-    component: () => import('../views/TheBlogPost.vue')
+    path: "/blog-post",
+    name: "TheBlogPost",
+    component: () => import("@/views/TheBlogPost.vue")
   },
   {
-    path: '*',
-    name: 'PageNotFound',
-    component: () => import('../views/PageNotFound.vue')
-  },
-]
+    path: "*",
+    name: "PageNotFound",
+    component: () => import("@/views/PageNotFound.vue")
+  }
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes,
 
-  scrollBehavior () {
+  scrollBehavior() {
     return { x: 0, y: 0 };
-  }  
-})
+  }
+});
 
-export default router
+export default router;

@@ -155,9 +155,6 @@ export default {
 </script>
 
 <style>
-body {
-  overflow-x: hidden;
-}
 .lagoa-h2 {
   margin-bottom: 2em;
 }

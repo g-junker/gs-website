@@ -78,6 +78,9 @@
           <img
             src="@/assets/images/jardim-europa/planta-tipo-a.jpg"
             class="jardim-floor-plans__item-image"
+            @click="
+              selectedImage = '@/assets/images/jardim-europa/planta-tipo-a.jpg'
+            "
           />
           <p>Planta Apto Tipo A</p>
         </div>
@@ -118,11 +121,17 @@
         <TheForm />
       </div>
     </div>
+    <MyModal
+      v-if="selectedImage"
+      :url="selectedImage"
+      @close="selectedImage = null"
+    />
   </div>
 </template>
 
 <script>
 import Header from "@/components/TheHeader.vue";
+import MyModal from "@/components/MyModal.vue";
 import TheFinancingSimulator from "@/components/TheFinancingSimulator.vue";
 import TheForm from "@/components/TheForm.vue";
 
@@ -130,6 +139,8 @@ export default {
   name: "JardimEuropa",
   data() {
     return {
+      selectedImage: "",
+      url: "",
       detalhes: [
         {
           icon: require("@/assets/svg/bed.svg"),
@@ -155,13 +166,17 @@ export default {
           icon: require("@/assets/svg/champagne-glass.svg"),
           text: "Salão de Festas"
         }
+      ],
+      images: [
+        { src: require("@/assets/images/jardim-europa/planta-tipo-a.jpg") }
       ]
     };
   },
   components: {
     Header,
     TheFinancingSimulator,
-    TheForm
+    TheForm,
+    MyModal
   }
 };
 </script>
@@ -170,6 +185,11 @@ export default {
 body {
   overflow-x: hidden;
 }
+
+.jardim-floor-plans__item img {
+  width: 100%;
+}
+
 .jardim-header {
   background-image: url("~@/assets/images/jardim-europa/cover.jpg");
   background-size: cover;

@@ -89,9 +89,6 @@ export default {
 </script>
 
 <style>
-body {
-  overflow-x: hidden;
-}
 .about {
   position: relative;
   margin-top: 4em;

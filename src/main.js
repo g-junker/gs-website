@@ -3,8 +3,14 @@ import "aos/dist/aos.css";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import VueSilentbox from "vue-silentbox";
+import Axios from "axios";
+
+Vue.use(VueSilentbox);
 
 Vue.config.productionTip = false;
+
+Vue.prototype.$http = Axios;
 
 new Vue({
   router,

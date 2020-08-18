@@ -1,9 +1,9 @@
 <template>
   <footer class="footer">
-    <div class="footer-container container">
-      <div class="footer-address">
+    <div class="footer__container container">
+      <div class="footer__address">
         <img
-          class="footer-logo"
+          class="footer__logo"
           src="@/assets/logo/logo-white.svg"
           alt="logo Gonzaga Sampaio"
         />
@@ -12,13 +12,14 @@
         Centro - Florianópolis, SC<br />
         CEP 88020-010
       </div>
-      <div class="footer-contact">
+      <div class="footer__contact">
         <span
-          >(48) 3333-7468 <span class="separator">|</span>(48) 99194-5415</span
+          >(48) 3333-7468 <span class="footer__contact-separator">|</span>(48)
+          99194-5415</span
         >
         contato@gonzagasampaio.com.br
       </div>
-      <div class="footer-social">
+      <div class="footer__icons">
         <a
           href="https://www.facebook.com/construtoragonzagasampaio/"
           target="_blank"
@@ -36,7 +37,7 @@
         </a>
       </div>
     </div>
-    <div class="copyright">
+    <div class="footer__copyright">
       © 2020 Construtora Gonzaga Sampaio
     </div>
   </footer>
@@ -55,70 +56,77 @@ export default {
   font-size: 0.8em;
   font-weight: 300;
   line-height: 1.5em;
-  padding-top: 4em;
 }
 
-.footer-container {
+.footer__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 4em;
 }
 
-.footer-address {
+.footer__address {
   display: flex;
-  padding-bottom: 2em;
-  padding-right: 2em;
+  padding-bottom: 4em;
 }
 
-.footer-logo {
+.footer__logo {
   width: 60px;
   height: 60px;
   padding-right: 4em;
 }
 
-.footer-contact {
-  padding-bottom: 3em;
+.footer__contact {
+  padding: 0 1em 4em;
 }
 
-.footer-contact > span {
+.footer__contact > span {
   display: block;
   font-size: 1.3em;
   font-weight: 600;
   padding-bottom: 0.3em;
 }
 
-.separator {
+.footer__contact-separator {
   padding: 0 1em;
 }
 
-.footer-social {
+.footer__icons {
   display: flex;
   width: 150px;
   justify-content: space-between;
+  padding-bottom: 4em;
 }
 
-.copyright {
+.footer__copyright {
   background-color: #0b151f;
   font-size: 0.9em;
   text-align: center;
   width: 100%;
   padding: 1.2em 0;
-  margin-top: 4em;
+}
+
+@media only screen and (max-width: 1100px) {
+  .footer__container {
+    justify-content: space-evenly;
+  }
 }
 
 @media only screen and (max-width: 700px) {
-  .footer-container {
+  .footer__container {
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
-  .footer-logo {
-    padding: 0 0 2em;
-  }
-  .footer-address {
+
+  .footer__address {
     flex-direction: column;
     align-items: center;
     padding: 0 0 3em;
+  }
+
+  .footer__logo {
+    padding: 0 0 2em;
   }
 }
 </style>

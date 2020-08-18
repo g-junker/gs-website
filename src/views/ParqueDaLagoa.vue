@@ -1,20 +1,28 @@
 <template>
   <div>
-    <Header />
-    <div class="lagoa-header">
-      <div class="lagoa-container container">
-        <div class="lagoa-logo">
-          <img src="@/assets/images/logo-lagoa.png" alt="" />
+    <Header isLogoWhite isTransparent />
+    <div class="project-hero lagoa-hero">
+      <div class="lagoa-hero__headline container">
+        <div class="lagoa-hero__logo-container">
+          <img
+            src="@/assets/images/logo-lagoa.png"
+            alt=""
+            class="lagoa-hero__logo"
+          />
         </div>
-        <h1>Parque da Lagoa</h1>
+        <h1 class="lagoa-hero__text">Parque da Lagoa</h1>
       </div>
     </div>
     <div class="lagoa-info container">
       <p><i class="fas fa-building"></i> Condomínio Fechado</p>
       <p><i class="fas fa-map-marker-alt"></i> Imbituba - SC</p>
     </div>
-    <div class="lagoa-intro">
-      <div class="lagoa-intro-left">
+    <div class="lagoa-image-text-row">
+      <div
+        class="lagoa__text-left"
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
         <h1>Imbituba:<br />uma cidade que transforma</h1>
         <p>
           É nesse contexto que nasce o Residencial Parque da Lagoa. Um
@@ -27,18 +35,30 @@
           residência urbana ou de veraneio.
         </p>
       </div>
-      <div class="lagoa-intro-right">
-        <img src="@/assets/images/lagoa/01.jpg" alt="" />
+      <div
+        class="lagoa__image-container"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
+        <img src="@/assets/images/lagoa/01.jpg" alt="" class="lagoa__image" />
       </div>
     </div>
-    <div class="lagoa-banner">
-      <img src="@/assets/images/lagoa/02.jpg" alt="" />
+    <div class="lagoa__banner">
+      <img src="@/assets/images/lagoa/02.jpg" alt="" class="lagoa__image" />
     </div>
-    <div class="lagoa-características">
-      <div class="lagoa-características-left">
-        <img src="@/assets/images/lagoa/03.jpg" alt="" />
+    <div class="lagoa-image-text-row">
+      <div
+        class="lagoa__image-container lagoa--flex-order"
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
+        <img src="@/assets/images/lagoa/03.jpg" alt="" class="lagoa__image" />
       </div>
-      <div class="lagoa-características-right">
+      <div
+        class="lagoa__text-right"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
         <h2 class="lagoa-h2">Características</h2>
         <p>
           Os momentos de lazer não foram esquecidos. O Residencial Parque da
@@ -54,9 +74,13 @@
         </ul>
       </div>
     </div>
-    <div class="lagoa-infraestrutura">
-      <div class="lagoa-infraestrutura-left">
-        <h2 class="lagoa-h2">Infraestrutura</h2>
+    <div class="lagoa-image-text-row lagoa-dark-background">
+      <div
+        class="lagoa__text-left"
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
+        <h2 class="lagoa-h2 text-white">Infraestrutura</h2>
         <p>
           Área: 72.000 m²<br />
           Lotes: a partir de 200m²
@@ -67,19 +91,29 @@
           <li>Rede coletora e Estação de Tratamento de Esgoto</li>
         </ul>
       </div>
-      <div class="lagoa-infraestrutura-right">
-        <img src="@/assets/images/lagoa/04.jpg" alt="" />
+      <div
+        class="lagoa__image-container"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
+        <img
+          src="@/assets/images/lagoa/04.jpg"
+          alt=""
+          class="lagoa__image lagoa-infraestrutura-image"
+        />
       </div>
     </div>
-    <div class="lagoa-galeria">
-      <h2 class="lagoa-h2">Galeria de Imagens</h2>
+    <div class="lagoa__gallery">
+      <h2 class="lagoa-h2 text-centered">Galeria de Imagens</h2>
       <PhotoGallery />
     </div>
-    <div class="lagoa-localizaçao">
+    <div class="location">
       <h2>Localização</h2>
-      <p>Porto da Vila, Imbituba - SC</p>
+      <p class="location__address">Porto da Vila, Imbituba - SC</p>
       <iframe
-        class="lagoa-localizaçao-mapa"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="location__map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4969.364454775437!2d-48.700724457368665!3d-28.271918925708125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9526b5d93d9980f7%3A0xb64b33dd6c1c3c2e!2sLoteamento%20Residencial%20Parque%20da%20Lagoa!5e0!3m2!1sen!2sde!4v1596739730384!5m2!1sen!2sde"
         width="100%"
         height="600"
@@ -91,15 +125,17 @@
       ></iframe>
     </div>
     <TheFinancingSimulator />
-    <div class="lagoa-formulario">
-      <h2>Fale Conosco</h2>
-      <TheForm />
+    <div class="project-form">
+      <h2 class="text-centered">Fale Conosco</h2>
+      <div data-aos="fade-right" data-aos-duration="1500">
+        <TheForm />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "@/components/HeaderWhite.vue";
+import Header from "@/components/TheHeader.vue";
 import PhotoGallery from "@/components/PhotoGallery.vue";
 import TheFinancingSimulator from "@/components/TheFinancingSimulator.vue";
 import TheForm from "@/components/TheForm.vue";
@@ -119,43 +155,40 @@ export default {
 </script>
 
 <style>
+body {
+  overflow-x: hidden;
+}
 .lagoa-h2 {
   margin-bottom: 2em;
 }
 
-.lagoa-header {
+.lagoa-hero {
   background-image: url("~@/assets/images/home-slide-1.jpg");
-  background-size: cover;
   background-position: center;
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
+}
+
+.lagoa-hero__headline {
   display: flex;
   align-items: center;
 }
 
-.lagoa-container {
-  display: flex;
-  align-items: center;
-}
-
-.lagoa-logo {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
+.lagoa-hero__logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
 }
 
-.lagoa-logo img {
+.lagoa-hero__logo {
   width: 90%;
 }
 
-.lagoa-header h1 {
-  margin: 0 0 0 0.7em;
+.lagoa-hero__text {
+  max-width: 400px;
+  margin-left: 0.7em;
   padding: 0;
-  max-width: 250px;
   color: #fff;
   font-weight: bold;
   font-size: calc(32px + (64 - 32) * ((100vw - 450px) / (1920 - 450)));
@@ -171,160 +204,84 @@ export default {
   margin: 0;
 }
 
-.lagoa-intro {
+.lagoa-image-text-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 4em;
 }
 
-.lagoa-intro-left {
+.lagoa__text-left {
   margin-left: 10%;
   width: 30%;
 }
 
-.lagoa-intro-right {
-  width: 55%;
-}
-
-.lagoa-intro-right img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-.lagoa-banner {
-  width: 100%;
-  margin-top: 4em;
-}
-
-.lagoa-banner img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-.lagoa-características {
-  display: flex;
-  margin-top: 4em;
-  justify-content: space-between;
-  align-items: center;
-  align-content: stretch;
-}
-
-.lagoa-características-left {
-  width: 55%;
-}
-
-.lagoa-características-left img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-.lagoa-características-right {
-  width: 30%;
+.lagoa__text-right {
   margin-right: 10%;
+  width: 30%;
 }
 
-.lagoa-infraestrutura {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.lagoa__image-container {
+  width: 55%;
+}
+
+.lagoa__image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.lagoa__banner {
+  width: 100%;
+  margin-top: 4em;
+}
+
+.lagoa-dark-background {
+  margin: 8em 0 4em;
   background-color: var(--main-color);
   color: #fff;
-  margin-top: 8em;
 }
 
-.lagoa-infraestrutura h2 {
-  color: #fff;
-}
-
-.lagoa-infraestrutura-left {
-  margin-left: 10%;
-  width: 30%;
-  padding: 2em 0;
-}
-
-.lagoa-infraestrutura-right {
-  width: 55%;
+.lagoa-infraestrutura-image {
   transform: translateY(-4em);
 }
 
-.lagoa-infraestrutura-right img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-.lagoa-galeria,
-.lagoa-localizaçao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4em;
-}
-
-.lagoa-galeria img {
-  width: 100%;
-  object-fit: contain;
-}
-
-.lagoa-localizaçao {
-  background-color: var(--box-light-color);
-  padding-top: 4em;
-}
-
-.lagoa-localizaçao-mapa {
-  border-top: 5px solid #fff !important;
-}
-
-.lagoa-formulario {
-  text-align: center;
-  margin: 4em 0 5em;
-}
-
-@media only screen and (max-width: 700px) {
-  .lagoa-info,
-  .lagoa-intro,
-  .lagoa-características,
-  .lagoa-infraestrutura {
+@media only screen and (max-width: 750px) {
+  .lagoa-image-text-row {
     flex-direction: column;
     margin: 0;
   }
 
-  .lagoa-intro-left,
-  .lagoa-características-right,
-  .lagoa-infraestrutura-left {
+  .lagoa__text-left,
+  .lagoa__text-right {
     width: 80%;
     margin: 0;
     padding: 3em 0;
   }
 
-  .lagoa-intro-right,
-  .lagoa-características-left,
-  .lagoa-infraestrutura-right {
+  .lagoa__image-container {
     width: 100%;
   }
 
-  .lagoa-banner,
-  .lagoa-infraestrutura {
-    margin-top: 0.25em;
+  .lagoa__banner {
+    margin-top: 0;
   }
 
-  .lagoa-características-left {
+  .lagoa--flex-order {
     order: 1;
   }
 
-  .lagoa-infraestrutura-left {
+  .lagoa-infraestrutura-image {
+    transform: none;
     margin-bottom: 4em;
   }
 
-  .lagoa-infraestrutura-right img,
-  .lagoa-características-left img,
-  .lagoa-banner img,
-  .lagoa-intro-right img {
+  .lagoa__image {
     height: 350px;
+  }
+
+  .lagoa__gallery {
+    margin-top: 4em;
   }
 }
 </style>

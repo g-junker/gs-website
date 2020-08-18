@@ -1,23 +1,28 @@
 <template>
   <div>
-    <Header />
-    <div class="empreendimentos-header">
-      <h1 class="container-sm"><span>Conheça nossos</span>Empreendimentos</h1>
+    <Header isLogoWhite isTransparent />
+    <div class="page-header projects-header">
+      <h1 class="container-sm page-header__title">
+        <span class="page-header__title--sm">Conheça nossos</span
+        >Empreendimentos
+      </h1>
     </div>
-    <div class="empreendimentos-lista container-sm">
+    <div class="container-sm">
       <div
-        class="empreendimento-item"
-        v-for="(empreendimento, index) in empreendimentos"
+        class="project"
+        :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'"
+        :data-aos-duration="1500"
+        v-for="(project, index) in projects"
         :key="index"
       >
-        <div class="empreendimento-item-img">
-          <img :src="empreendimento.image" />
+        <div class="project__image-container">
+          <img :src="project.image" class="project__image" />
         </div>
-        <div class="empreendimento-item-info">
-          <h2>{{ empreendimento.title }}</h2>
-          <span>{{ empreendimento.location }}</span>
-          <p>{{ empreendimento.text }}</p>
-          <router-link :to="empreendimento.link">
+        <div class="project__content">
+          <h2>{{ project.title }}</h2>
+          <span class="project__content-text">{{ project.location }}</span>
+          <p class="project__content-text">{{ project.text }}</p>
+          <router-link :to="project.link">
             <button class="button">
               Saiba mais <i class="fas fa-long-arrow-alt-right"></i>
             </button>
@@ -29,13 +34,13 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderWhite.vue";
+import Header from "@/components/TheHeader.vue";
 
 export default {
   name: "NossosEmpreendimentos",
   data() {
     return {
-      empreendimentos: [
+      projects: [
         {
           title: "Terroir Villaggio",
           location: "São Joaquim, SC",
@@ -70,69 +75,49 @@ export default {
 </script>
 
 <style>
-.empreendimentos-header {
-  position: relative;
-  width: 100%;
-  height: 300px;
+.projects-header {
   background-image: url("~@/assets/images/nossos-empreendimentos-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-}
-.empreendimentos-header h1 {
-  color: #fff;
-  z-index: 2;
 }
 
-.empreendimentos-header > h1 > span {
-  font-size: 0.3em;
-  font-weight: 300;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
-
-.empreendimento-item {
+.project {
   display: flex;
   padding: 3em 0;
   border-bottom: 1px solid var(--box-medium-color);
 }
 
-.empreendimento-item-img {
+.project__image-container {
   width: 50%;
 }
 
-.empreendimento-item-img img {
+.project__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.empreendimento-item-info {
+.project__content {
   width: 50%;
   padding-left: 2em;
   align-self: flex-end;
 }
 
-.empreendimento-item-info > p,
-.empreendimento-item-info > span {
+.project__content-text {
+  padding: 1em 0 2em;
   font-size: 0.8em;
   line-height: 1.5em;
-  padding: 1em 0 2em;
 }
 
 @media only screen and (max-width: 550px) {
-  .empreendimento-item {
+  .project {
     flex-direction: column;
   }
 
-  .empreendimento-item-img,
-  .empreendimento-item-info {
+  .project__image-container,
+  .project__content {
     width: 100%;
   }
 
-  .empreendimento-item-info {
+  .project__content {
     margin-top: 2em;
     padding: 0;
   }

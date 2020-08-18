@@ -1,9 +1,15 @@
 <template>
   <div>
     <Header />
-    <div class="quem-somos-flex-col">
-      <div class="quem-somos-img"></div>
-      <div class="quem-somos-texto-a">
+    <div class="about">
+      <div
+        class="about__image-container"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
+        <img src="@/assets/images/quem-somos.jpg" alt="" class="about__image" />
+      </div>
+      <div class="about__text-top">
         <h1>Quem Somos</h1>
         <p>
           A Gonzaga Sampaio iniciou suas atividades em 2011, com a proposta de
@@ -12,8 +18,8 @@
           potencial de valorização dos imóveis entregues.
         </p>
       </div>
-      <div class="quem-somos-texto-b-wrapper">
-        <div class="quem-somos-texto-b">
+      <div class="about__text-bottom-container">
+        <div class="about__text-bottom">
           <p>
             Para isso, damos atenção especial quanto à escolha do terreno,
             posição solar do empreendimento, acesso às vias de trânsito civil de
@@ -24,12 +30,20 @@
       </div>
     </div>
 
-    <div class="quem-somos-missao-visao">
-      <div class="quem-somos-missao">
-        <div class="quem-somos-icone">
-          <img src="@/assets/svg/mission.svg" alt="" />
+    <div class="mission-vision">
+      <div
+        class="mission-vision__item"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
+        <div>
+          <img
+            src="@/assets/svg/mission.svg"
+            alt=""
+            class="mission-vision__icon"
+          />
         </div>
-        <div class="quem-somos-icone-texto">
+        <div class="mission-vision__text">
           <h2>Missão</h2>
           <p>
             Fornecer unidades habitacionais com alta qualidade, projetos
@@ -38,11 +52,20 @@
           </p>
         </div>
       </div>
-      <div class="quem-somos-visao">
-        <div class="quem-somos-icone">
-          <img src="@/assets/svg/anatomy.svg" alt="" />
+      <div
+        class="mission-vision__item"
+        data-aos="fade-right"
+        data-aos-delay="200"
+        data-aos-duration="1300"
+      >
+        <div>
+          <img
+            src="@/assets/svg/anatomy.svg"
+            alt=""
+            class="mission-vision__icon"
+          />
         </div>
-        <div class="quem-somos-icone-texto">
+        <div class="mission-vision__text">
           <h2>Visão</h2>
           <p>
             Posicionar a marca no mercado em que atua e contribuir para o
@@ -55,7 +78,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderColor.vue";
+import Header from "@/components/TheHeader.vue";
 
 export default {
   name: "QuemSomos",
@@ -66,102 +89,106 @@ export default {
 </script>
 
 <style>
-.quem-somos-texto-a {
-  margin-top: 6em;
-  width: 35%;
-  margin-left: 10%;
+body {
+  overflow-x: hidden;
+}
+.about {
+  position: relative;
+  margin-top: 4em;
 }
 
-.quem-somos-texto-b-wrapper {
-  background: var(--box-light-color);
-}
-
-.quem-somos-texto-b {
-  padding: 2em 0;
-  margin-top: 2em;
-  margin-left: 10%;
-  width: 35%;
-  display: flex;
-}
-
-.quem-somos-img {
+.about__image-container {
   position: absolute;
   right: 0;
-  top: 10em;
   width: 50%;
-  height: 35%;
-  background-image: url("~@/assets/images/quem-somos.jpg");
-  background-size: cover;
-  background-position: center;
+  height: 90%;
 }
 
-.quem-somos-missao-visao {
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__text-top,
+.about__text-bottom {
+  width: 35%;
+  margin-left: 10%;
+}
+
+.about__text-bottom-container {
+  background: var(--box-light-color);
+  padding: 1em 0;
+  margin-top: 1.5em;
+}
+
+.mission-vision {
   display: flex;
   justify-content: space-around;
   width: 80%;
   margin: 3em auto;
 }
 
-.quem-somos-icone img {
+.mission-vision__icon {
   background-color: var(--box-light-color);
   border-radius: 50%;
   width: 100px;
   margin-bottom: 1em;
 }
 
-.quem-somos-missao,
-.quem-somos-visao {
+.mission-vision__item {
   display: flex;
   width: 45%;
   margin-top: 2em;
 }
 
-.quem-somos-icone-texto {
+.mission-vision__text {
   padding: 0 2em;
 }
 
 @media only screen and (max-width: 1000px) {
-  .quem-somos-missao-visao {
+  .mission-vision {
     flex-direction: column;
     align-items: center;
   }
-  .quem-somos-missao,
-  .quem-somos-visao {
+  .mission-vision__item {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .quem-somos-flex-col {
+  .about {
     display: flex;
     flex-direction: column;
+    margin-top: 2em;
   }
-  .quem-somos-img {
+
+  .about__image-container {
     order: 0;
     position: relative;
     width: 100%;
     height: 250px;
-    top: 0;
-    margin-top: 2em;
+    margin-top: 1em;
   }
 
-  .quem-somos-texto-a {
-    margin-top: 3em;
+  .about__text-top {
     order: -1;
     position: relative;
     width: 80%;
   }
 
-  .quem-somos-texto-b {
+  .about__text-bottom {
     order: 1;
     width: 80%;
+  }
+
+  .about__text-bottom-container {
     margin-top: 0;
   }
 }
 
 @media only screen and (max-width: 550px) {
-  .quem-somos-missao,
-  .quem-somos-visao {
+  .mission-vision__item {
     flex-direction: column;
     text-align: center;
   }

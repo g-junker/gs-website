@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
-    <div class="blog-header">
-      <h1 class="container-sm">Blog</h1>
+    <Header isLogoWhite isTransparent />
+    <div class="page-header blog-header">
+      <h1 class="container-sm page-header__title">Blog</h1>
     </div>
     <BlogPostItem />
     <BlogPostItem />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderWhite.vue";
+import Header from "@/components/TheHeader.vue";
 import BlogPostItem from "@/components/BlogPostItem.vue";
 
 export default {
@@ -25,17 +25,6 @@ export default {
 
 <style>
 .blog-header {
-  position: relative;
-  width: 100%;
-  height: 300px;
   background-image: url("~@/assets/images/blog-header.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-}
-.blog-header h1 {
-  color: #fff;
-  z-index: 2;
 }
 </style>

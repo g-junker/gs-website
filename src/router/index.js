@@ -12,13 +12,13 @@ const routes = [
   },
   {
     path: "/quem-somos",
-    name: "QuemSomos",
-    component: () => import("@/views/QuemSomos.vue")
+    name: "WhoWeAre",
+    component: () => import("@/views/WhoWeAre.vue")
   },
   {
     path: "/empreendimentos",
-    name: "NossosEmpreendimentos",
-    component: () => import("@/views/NossosEmpreendimentos.vue")
+    name: "OurProjects",
+    component: () => import("@/views/OurProjects.vue")
   },
   {
     path: "/empreendimentos/parque-da-lagoa",
@@ -32,18 +32,18 @@ const routes = [
   },
   {
     path: "/fale-conosco",
-    name: "FaleConosco",
-    component: () => import("@/views/FaleConosco.vue")
+    name: "ContactUs",
+    component: () => import("@/views/ContactUs.vue")
   },
   {
     path: "/blog",
     name: "Blog",
-    component: () => import("@/views/TheBlog.vue")
+    component: () => import("@/views/Blog.vue")
   },
   {
     path: "/blog-post",
-    name: "TheBlogPost",
-    component: () => import("@/views/TheBlogPost.vue")
+    name: "BlogPost",
+    component: () => import("@/views/BlogPost.vue")
   },
   {
     path: "*",

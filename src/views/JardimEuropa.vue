@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header isLogoWhite isTransparent />
     <div class="jardim-header">
       <div class="jardim-container container">
         <img class="jardim-logo" src="@/assets/images/jardim-europa/logo.png" />
@@ -14,51 +14,93 @@
       <p><i class="fas fa-building"></i> Condomínio Fechado</p>
       <p><i class="fas fa-map-marker-alt"></i> Imbituba - SC</p>
     </div>
-    <div class="jardim-intro">
-      <div class="jardim-intro-left">
-        <h1>Condomínio fechado no centro de Tijucas</h1>
+    <div class="jardim__intro">
+      <div class="jardim__intro-text">
+        <h1 data-aos="fade-right" data-aos-duration="1500">
+          Condomínio fechado no centro de Tijucas
+        </h1>
       </div>
-      <div class="jardim-intro-right">
-        <img src="@/assets/images/jardim-europa/01.jpg" alt="" />
+      <div
+        class="jardim__intro-image-container"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+        data-aos-delay="50"
+      >
+        <img
+          src="@/assets/images/jardim-europa/01.jpg"
+          alt=""
+          class="jardim__intro-image"
+        />
       </div>
     </div>
-    <div class="jardim-detalhes">
+    <div class="jardim-details">
       <div
-        class="jardim-detalhes-item"
+        class="jardim-details__item"
         v-for="(detalhe, index) in detalhes"
         :key="index"
       >
-        <div class="jardim-detalhes-item-icon">
-          <img :src="detalhe.icon" />
+        <div>
+          <img :src="detalhe.icon" class="jardim-details__icon" />
         </div>
         <p>{{ detalhe.text }}</p>
       </div>
     </div>
-    <div class="jardim-imagens">
-      <div class="jardim-imagens-item">
-        <img src="@/assets/images/jardim-europa/02.jpg" />
+    <div class="jardim-images">
+      <div
+        class="jardim-images__item"
+        data-aos="fade-right"
+        data-aos-duration="1500"
+      >
+        <img
+          src="@/assets/images/jardim-europa/02.jpg"
+          class="jardim-images__image"
+        />
       </div>
-      <div class="jardim-imagens-item">
-        <img src="@/assets/images/jardim-europa/03.jpg" />
+      <div
+        class="jardim-images__item"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
+        <img
+          src="@/assets/images/jardim-europa/03.jpg"
+          class="jardim-images__image"
+        />
       </div>
     </div>
-    <div class="jardim-plantas">
-      <h2>Plantas</h2>
-      <div class="plantas-imagens">
-        <div class="planta-detalhe">
-          <img src="@/assets/images/jardim-europa/planta-tipo-a.jpg" />
+    <div class="jardim-floor-plans">
+      <h2 class="jardim-floor-plans__headline">Plantas</h2>
+      <div class="jardim-floor-plans__images">
+        <div
+          class="jardim-floor-plans__item"
+          data-aos="fade-left"
+          data-aos-duration="1500"
+        >
+          <img
+            src="@/assets/images/jardim-europa/planta-tipo-a.jpg"
+            class="jardim-floor-plans__item-image"
+          />
           <p>Planta Apto Tipo A</p>
         </div>
-        <div class="planta-detalhe">
-          <img src="@/assets/images/jardim-europa/planta-tipo-b.jpg" />
+        <div
+          class="jardim-floor-plans__item"
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
+          <img
+            src="@/assets/images/jardim-europa/planta-tipo-b.jpg"
+            class="jardim-floor-plans__item-image"
+          />
           <p>Planta Apto Tipo B</p>
         </div>
       </div>
     </div>
-    <div class="jardim-localizaçao">
+    <div class="location">
       <h2>Localização</h2>
-      <p>Avenida Emília Ramos, Tijucas - SC</p>
+      <p class="location__address">Avenida Emília Ramos, Tijucas - SC</p>
       <iframe
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="location__map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8436.671842063412!2d-48.654884834666255!3d-27.244772000976802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8abdc900dc505%3A0xd78baebf76030702!2sAv.%20Emilia%20Ramos%2C%20Tijucas%20-%20SC%2C%2088200-000%2C%20Brazil!5e0!3m2!1sen!2sde!4v1596807030201!5m2!1sen!2sde"
         width="100%"
         height="600"
@@ -70,15 +112,17 @@
       ></iframe>
     </div>
     <TheFinancingSimulator />
-    <div class="jardim-formulario">
-      <h2>Fale Conosco</h2>
-      <TheForm />
+    <div class="project-form">
+      <h2 class="text-centered">Fale Conosco</h2>
+      <div data-aos="fade-right" data-aos-duration="1500">
+        <TheForm />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "@/components/HeaderWhite.vue";
+import Header from "@/components/TheHeader.vue";
 import TheFinancingSimulator from "@/components/TheFinancingSimulator.vue";
 import TheForm from "@/components/TheForm.vue";
 
@@ -123,10 +167,13 @@ export default {
 </script>
 
 <style>
+body {
+  overflow-x: hidden;
+}
 .jardim-header {
   background-image: url("~@/assets/images/jardim-europa/cover.jpg");
   background-size: cover;
-  background-position-x: 25%;
+  background-position-x: 35%;
   height: 100vh;
   width: 100vw;
   max-width: 100%;
@@ -164,56 +211,56 @@ export default {
   margin: 0;
 }
 
-.jardim-intro {
+.jardim__intro {
   margin: 2em 0 4em;
   position: relative;
 }
 
-.jardim-intro-left {
+.jardim__intro-text {
   padding: 3em 10%;
   background-color: var(--box-light-color);
   transform: translateY(200px);
 }
 
-.jardim-intro-left h1 {
+.jardim__intro-text h1 {
   width: 35%;
 }
 
-.jardim-intro-right {
+.jardim__intro-image-container {
   position: absolute;
   right: 10%;
   top: 0;
   width: 45%;
 }
 
-.jardim-intro-right img {
+.jardim__intro-image {
   width: 100%;
   height: 450px;
   object-fit: cover;
 }
 
-.jardim-detalhes {
+.jardim-details {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   width: 80%;
   max-width: 1000px;
   margin: 250px auto 0;
 }
 
-.jardim-detalhes-item {
+.jardim-details__item {
   width: 125px;
+  padding: 1em;
   text-align: center;
-  padding: 1em 0;
 }
 
-.jardim-detalhes-item-icon img {
+.jardim-details__icon {
+  width: 100px;
   background-color: var(--box-light-color);
   border-radius: 50%;
-  width: 100px;
 }
 
-.jardim-imagens {
+.jardim-images {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -221,12 +268,12 @@ export default {
   margin: 4em auto 0;
 }
 
-.jardim-imagens-item img {
+.jardim-images__image {
   width: 100%;
   object-fit: contain;
 }
 
-.jardim-plantas {
+.jardim-floor-plans {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -234,34 +281,35 @@ export default {
   background-color: var(--main-color);
   color: #fff;
   padding: 4em 10%;
-  margin: 6em 0 4em;
+  margin-top: 6em;
 }
 
-.jardim-plantas h2 {
-  color: #fff;
-  width: 20%;
+.jardim-floor-plans__headline {
   margin: auto;
+  width: 20%;
+  min-width: 120px;
+  color: #fff;
+  text-align: center;
 }
 
-.plantas-imagens {
+.jardim-floor-plans__images {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  min-width: 350px;
   width: 80%;
+  margin: auto;
 }
 
-.planta-detalhe {
+.jardim-floor-plans__item {
   text-align: center;
-  width: 48%;
+  width: 40%;
   min-width: 300px;
   padding-top: 2em;
   text-transform: uppercase;
 }
 
-.planta-detalhe img {
-  min-width: 300px;
-  max-width: 100%;
+.jardim-floor-plans__item-image {
+  width: 100%;
 }
 
 .jardim-localizaçao {
@@ -272,41 +320,79 @@ export default {
   border-top: 5px solid #fff !important;
 }
 
-.jardim-formulario {
-  text-align: center;
-  margin: 4em 0 5em;
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   .jardim-info,
-  .jardim-intro {
+  .jardim__intro {
     flex-direction: column;
-    margin: 0;
   }
 
-  .jardim-intro-left {
+  .jardim-info {
+    margin-top: 1em;
+  }
+
+  .jardim__intro-text {
     transform: translateY(0);
   }
 
-  .jardim-intro-left h1 {
+  .jardim__intro-text h1 {
     width: auto;
   }
 
-  .jardim-intro-right {
+  .jardim__intro-image-container {
     position: relative;
     width: 100%;
     right: 0;
   }
 
-  .jardim-intro-right img {
+  .jardim__intro-image {
     width: 100%;
     height: auto;
   }
 
-  .jardim-detalhes {
-    justify-content: space-evenly;
+  .jardim-details {
     width: 80%;
-    margin-top: 2em;
+    margin: 4em auto;
+  }
+
+  .jardim-floor-plans {
+    margin-top: 4em;
+  }
+
+  .jardim-header {
+    background-position-x: 65%;
+    position: relative;
+  }
+
+  .jardim-container {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(0);
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgba(196, 196, 196, 0) 34.38%,
+      rgba(255, 255, 255, 0.9) 63.54%
+    );
+    width: 100%;
+    height: 100%;
+  }
+
+  .jardim-headline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2em;
+    margin: auto;
+    max-width: 80%;
+    width: 80%;
+  }
+
+  .jardim-logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10em;
+    margin: auto;
   }
 }
 </style>

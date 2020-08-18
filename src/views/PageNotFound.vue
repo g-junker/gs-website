@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header isLogoWhite isBlue />
     <div class="page-not-found">
       <h1>404</h1>
       <h2>Página não encontrada</h2>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderBlue.vue";
+import Header from "@/components/TheHeader.vue";
 
 export default {
   name: "PageNotFound",

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header isLogoWhite isTransparent />
     <div class="blog-post-header">
       <p>Blog</p>
     </div>
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderColor.vue";
+import Header from "@/components/TheHeader.vue";
 
 export default {
   name: "TheBlogPost",

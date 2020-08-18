@@ -137,3 +137,75 @@ li {
 .text-link:hover {
     opacity: .8;
 }
+
+.text-centered {
+    text-align: center;
+}
+
+.text-white {
+    color: #FFF;
+}
+
+.page-header{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;    
+}
+
+.page-header__title {
+    color: #fff;
+    z-index: 2;    
+}
+
+.page-header__title--sm {
+    font-size: 0.3em;
+    font-weight: 300;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;    
+}
+
+.project-hero {
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.project-form {
+    margin-top: 4em;
+}
+
+.location {
+    background-color: var(--box-light-color);
+    text-align: center;
+    padding-top: 4em;
+}
+  
+.location__address {
+    width: 90%;
+    margin: auto;
+    padding: 2em 0 1em;
+}
+
+.location__map {
+    border-top: 5px solid #fff !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}

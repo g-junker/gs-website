@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="content">
-      <router-view />
+      <transition name="fade-page" mode="out-in">
+        <router-view />
+      </transition>
     </div>
     <TheFooter />
   </div>
@@ -27,5 +29,16 @@ export default {
 }
 .content {
   flex: 1;
+}
+
+.fade-page-enter-active,
+.fade-page-leave-active {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.fade-page-enter,
+.fade-page-leave-active {
+  opacity: 0;
 }
 </style>

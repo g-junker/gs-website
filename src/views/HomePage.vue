@@ -1,29 +1,33 @@
 <template>
   <div>
-    <Header />
+    <Header isLogoWhite isTransparent />
     <TheCarousel />
-    <div class="home-content container">
-      <div class="home-content-text">
+    <div class="home container">
+      <div class="home__text" data-aos="fade-right" data-aos-duration="1500">
         <h1>Qualidade, inovação e sustentabilidade</h1>
         <p>
           A Construtora Gonzaga Sampaio mantém um elevado padrão de qualidade,
           inovação e sustentabilidade. Afinal, um empreendimento de sucesso
           começa pela qualidade e diferenciais encontrados em seu projeto.
         </p>
-        <router-link to="/empreendimentos" class="text-link"
+        <router-link :to="{ name: 'OurProjects' }" class="text-link"
           >Conheça nossos empreendimentos
           <i class="fas fa-long-arrow-alt-right"></i
         ></router-link>
       </div>
-      <div class="home-content-img">
-        <img src="@/assets/images/home-terroir.jpg" />
+      <div
+        class="home__image-container"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
+        <img src="@/assets/images/home-terroir.jpg" class="home__image" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "@/components/HeaderWhite.vue";
+import Header from "@/components/TheHeader.vue";
 import TheCarousel from "@/components/TheCarousel.vue";
 
 export default {
@@ -31,36 +35,45 @@ export default {
   components: {
     Header,
     TheCarousel
+  },
+  data() {
+    return {
+      isLogoWhite: true,
+      isTransparent: true
+    };
   }
 };
 </script>
 
 <style>
-.home-content {
+.home {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 4em 0;
 }
 
-.home-content-text {
+.home__text {
   width: 40%;
 }
 
-.home-content-img {
+.home__image-container {
   width: 50%;
 }
 
-.home-content-img img {
+.home__image {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
-@media only screen and (max-width: 1024px) {
-  .home-content {
+@media only screen and (max-width: 800px) {
+  .home {
     flex-direction: column;
   }
-  .home-content-text,
-  .home-content-img {
+
+  .home__text,
+  .home__image-container {
     width: 100%;
   }
 }

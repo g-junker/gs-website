@@ -1,5 +1,7 @@
 # gs-website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e92d372-a83a-4ce1-8980-42491ba5ade5/deploy-status)](https://app.netlify.com/sites/gonzaga-sampaio/deploys)
+
 ## Project setup
 ```
 npm install

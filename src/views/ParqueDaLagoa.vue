@@ -21,7 +21,7 @@
       <div
         class="lagoa__text-left"
         data-aos="fade-right"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <h1>Imbituba:<br />uma cidade que transforma</h1>
         <p>
@@ -38,7 +38,7 @@
       <div
         class="lagoa__image-container"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img src="@/assets/images/lagoa/01.jpg" alt="" class="lagoa__image" />
       </div>
@@ -50,14 +50,14 @@
       <div
         class="lagoa__image-container lagoa--flex-order"
         data-aos="fade-right"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img src="@/assets/images/lagoa/03.jpg" alt="" class="lagoa__image" />
       </div>
       <div
         class="lagoa__text-right"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <h2 class="lagoa-h2">Características</h2>
         <p>
@@ -78,7 +78,7 @@
       <div
         class="lagoa__text-left"
         data-aos="fade-right"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <h2 class="lagoa-h2 text-white">Infraestrutura</h2>
         <p>
@@ -94,7 +94,7 @@
       <div
         class="lagoa__image-container"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img
           src="@/assets/images/lagoa/04.jpg"
@@ -112,7 +112,7 @@
       <p class="location__address">Porto da Vila, Imbituba - SC</p>
       <iframe
         data-aos="fade-up"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
         class="location__map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4969.364454775437!2d-48.700724457368665!3d-28.271918925708125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9526b5d93d9980f7%3A0xb64b33dd6c1c3c2e!2sLoteamento%20Residencial%20Parque%20da%20Lagoa!5e0!3m2!1sen!2sde!4v1596739730384!5m2!1sen!2sde"
         width="100%"
@@ -127,7 +127,7 @@
     <TheFinancingSimulator />
     <div class="project-form">
       <h2 class="text-centered">Fale Conosco</h2>
-      <div data-aos="fade-right" data-aos-duration="1500">
+      <div data-aos="fade-right" data-aos-duration="1000">
         <TheForm />
       </div>
     </div>
@@ -244,6 +244,11 @@ export default {
 }
 
 @media only screen and (max-width: 750px) {
+  .lagoa-info {
+    flex-direction: column;
+    margin-top: 1em;
+  }
+
   .lagoa-image-text-row {
     flex-direction: column;
     margin: 0;
@@ -276,9 +281,22 @@ export default {
   .lagoa__image {
     height: 350px;
   }
+  .lagoa-hero__logo-container {
+    width: 75px;
+    height: 75px;
+  }
+  .lagoa-hero__text {
+    margin-left: 0;
+    max-width: 250px;
+  }
 
   .lagoa__gallery {
     margin-top: 4em;
+  }
+
+  .lagoa-hero__headline {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>

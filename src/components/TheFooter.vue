@@ -13,11 +13,12 @@
         CEP 88020-010
       </div>
       <div class="footer__contact">
-        <span
-          >(48) 3333-7468 <span class="footer__contact-separator">|</span>(48)
-          99194-5415</span
-        >
-        contato@gonzagasampaio.com.br
+        <span class="footer__contact-phone">(48) 3333-7468</span>
+        <span class="footer__contact-separator">|</span
+        ><span class="footer__contact-phone">(48) 99194-5415</span>
+        <span class="footer__contact-email">
+          contato@gonzagasampaio.com.br
+        </span>
       </div>
       <div class="footer__icons">
         <a
@@ -80,11 +81,14 @@ export default {
   padding: 0 1em 4em;
 }
 
-.footer__contact > span {
-  display: block;
+.footer__contact-phone {
   font-size: 1.3em;
   font-weight: 600;
   padding-bottom: 0.3em;
+}
+
+.footer__contact-email {
+  display: block;
 }
 
 .footer__contact-separator {
@@ -127,6 +131,13 @@ export default {
 
   .footer__logo {
     padding: 0 0 2em;
+  }
+
+  .footer__contact-separator {
+    display: none;
+  }
+  .footer__contact-phone {
+    display: block;
   }
 }
 </style>

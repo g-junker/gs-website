@@ -2,20 +2,19 @@
   <div class="carousel__container">
     <transition-group name="fade">
       <div v-for="i in [currentIndex]" :key="i">
-        <div
+        <router-link
           :style="{ 'background-image': 'url(' + currentImg + ')' }"
           class="carousel"
+          :to="{ name: currentLink }"
         >
           <div class="carousel__content">
             <span class="carousel__content-title">{{ currentTitle }}</span>
             <span class="carousel__content-text">{{ currentText }}</span>
-            <a :href="currentLink">
-              <button class="button-white">
-                Conheça <i class="fas fa-long-arrow-alt-right"></i>
-              </button>
-            </a>
+            <button class="button-white">
+              Conheça <i class="fas fa-long-arrow-alt-right"></i>
+            </button>
           </div>
-        </div>
+        </router-link>
       </div>
     </transition-group>
     <div class="carousel__control">
@@ -39,13 +38,13 @@ export default {
           image: require("@/assets/images/home-slide-1.jpg"),
           title: "Parque da Lagoa",
           text: "Imbituba, SC",
-          link: "#"
+          link: "ParqueDaLagoa"
         },
         {
           image: require("@/assets/images/home-slide-2.jpg"),
           title: "Terroir Villaggio",
           text: "São Joaquim, SC",
-          link: "#"
+          link: "/"
         }
       ],
       timer: null,

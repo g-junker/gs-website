@@ -16,14 +16,14 @@
     </div>
     <div class="jardim__intro">
       <div class="jardim__intro-text">
-        <h1 data-aos="fade-right" data-aos-duration="1500">
+        <h1 data-aos="fade-right" data-aos-duration="1000">
           Condomínio fechado no centro de Tijucas
         </h1>
       </div>
       <div
         class="jardim__intro-image-container"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
         data-aos-delay="50"
       >
         <img
@@ -49,7 +49,7 @@
       <div
         class="jardim-images__item"
         data-aos="fade-right"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img
           src="@/assets/images/jardim-europa/02.jpg"
@@ -59,7 +59,7 @@
       <div
         class="jardim-images__item"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img
           src="@/assets/images/jardim-europa/03.jpg"
@@ -73,21 +73,18 @@
         <div
           class="jardim-floor-plans__item"
           data-aos="fade-left"
-          data-aos-duration="1500"
+          data-aos-duration="1000"
         >
           <img
             src="@/assets/images/jardim-europa/planta-tipo-a.jpg"
             class="jardim-floor-plans__item-image"
-            @click="
-              selectedImage = '@/assets/images/jardim-europa/planta-tipo-a.jpg'
-            "
           />
           <p>Planta Apto Tipo A</p>
         </div>
         <div
           class="jardim-floor-plans__item"
           data-aos="fade-right"
-          data-aos-duration="1500"
+          data-aos-duration="1000"
         >
           <img
             src="@/assets/images/jardim-europa/planta-tipo-b.jpg"
@@ -102,7 +99,7 @@
       <p class="location__address">Avenida Emília Ramos, Tijucas - SC</p>
       <iframe
         data-aos="fade-up"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
         class="location__map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8436.671842063412!2d-48.654884834666255!3d-27.244772000976802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8abdc900dc505%3A0xd78baebf76030702!2sAv.%20Emilia%20Ramos%2C%20Tijucas%20-%20SC%2C%2088200-000%2C%20Brazil!5e0!3m2!1sen!2sde!4v1596807030201!5m2!1sen!2sde"
         width="100%"
@@ -117,7 +114,7 @@
     <TheFinancingSimulator />
     <div class="project-form">
       <h2 class="text-centered">Fale Conosco</h2>
-      <div data-aos="fade-right" data-aos-duration="1500">
+      <div data-aos="fade-right" data-aos-duration="1000">
         <TheForm />
       </div>
     </div>
@@ -274,6 +271,10 @@ body {
   text-align: center;
 }
 
+.jardim-details__item > p {
+  margin: 0.3em;
+}
+
 .jardim-details__icon {
   width: 100px;
   background-color: var(--box-light-color);
@@ -401,7 +402,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 2em;
+    bottom: 3em;
     margin: auto;
     max-width: 80%;
     width: 80%;
@@ -411,7 +412,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 10em;
+    bottom: 12em;
     margin: auto;
   }
 }

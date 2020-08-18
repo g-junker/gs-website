@@ -157,7 +157,7 @@ export default {
 }
 
 .header__logo {
-  width: 50vw;
+  width: 60vw;
   max-width: 220px;
 }
 

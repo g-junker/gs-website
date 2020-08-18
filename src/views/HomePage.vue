@@ -3,7 +3,7 @@
     <Header isLogoWhite isTransparent />
     <TheCarousel />
     <div class="home container">
-      <div class="home__text" data-aos="fade-right" data-aos-duration="1500">
+      <div class="home__text" data-aos="fade-right" data-aos-duration="1000">
         <h1>Qualidade, inovação e sustentabilidade</h1>
         <p>
           A Construtora Gonzaga Sampaio mantém um elevado padrão de qualidade,
@@ -18,7 +18,7 @@
       <div
         class="home__image-container"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <img src="@/assets/images/home-terroir.jpg" class="home__image" />
       </div>
@@ -70,11 +70,16 @@ export default {
 @media only screen and (max-width: 800px) {
   .home {
     flex-direction: column;
+    padding-top: 3em;
   }
 
   .home__text,
   .home__image-container {
     width: 100%;
+  }
+
+  .home__image-container {
+    margin-top: 3em;
   }
 }
 </style>

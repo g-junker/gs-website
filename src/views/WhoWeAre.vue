@@ -4,7 +4,7 @@
     <div class="about">
       <div
         class="about__image-container"
-        data-aos="fade-down"
+        data-aos="fade-left"
         data-aos-duration="1000"
       >
         <img src="@/assets/images/quem-somos.jpg" alt="" class="about__image" />
@@ -34,7 +34,7 @@
       <div
         class="mission-vision__item"
         data-aos="fade-left"
-        data-aos-duration="1500"
+        data-aos-duration="1000"
       >
         <div>
           <img
@@ -55,8 +55,7 @@
       <div
         class="mission-vision__item"
         data-aos="fade-right"
-        data-aos-delay="200"
-        data-aos-duration="1300"
+        data-aos-duration="1000"
       >
         <div>
           <img

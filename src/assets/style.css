@@ -160,11 +160,10 @@ li {
 
 .page-header__title {
     color: #fff;
-    z-index: 2;    
 }
 
 .page-header__title--sm {
-    font-size: 0.3em;
+    font-size: 14px;
     font-weight: 300;
     display: block;
     text-transform: uppercase;

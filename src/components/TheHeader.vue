@@ -255,6 +255,7 @@ export default {
 @media screen and (max-width: 950px) {
   .header {
     overflow-x: hidden;
+    overflow-y: visible;
   }
   .header__container {
     justify-content: space-between;

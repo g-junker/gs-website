@@ -3,10 +3,11 @@ import "aos/dist/aos.css";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import VueSilentbox from "vue-silentbox";
 import Axios from "axios";
+import CoolLightBox from "vue-cool-lightbox";
+import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 
-Vue.use(VueSilentbox);
+Vue.use(CoolLightBox);
 
 Vue.config.productionTip = false;
 

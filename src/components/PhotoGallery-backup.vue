@@ -1,21 +1,11 @@
 <template>
-  <div>
-    <CoolLightBox
-      :items="items"
-      :index="index"
-      @close="index = null"
-      :effect="'fade'"
+  <div class="gallery" data-aos="fade-up" data-aos-duration="1500">
+    <div
+      v-for="(image, index) in images"
+      :key="index"
+      class="gallery__thumbnail"
     >
-    </CoolLightBox>
-    <div class="gallery" data-aos="fade-up" data-aos-duration="1500">
-      <div
-        v-for="(image, imageIndex) in items"
-        :key="imageIndex"
-        @click="index = imageIndex"
-        class="gallery__thumbnail"
-      >
-        <img :src="image" class="gallery__thumbnail-image" />
-      </div>
+      <img :src="image" class="gallery__thumbnail-image" />
     </div>
   </div>
 </template>
@@ -25,7 +15,7 @@ export default {
   name: "PhotoGallery",
   data() {
     return {
-      items: [
+      images: [
         require("@/assets/images/lagoa/gallery/lagoa (1).jpg"),
         require("@/assets/images/lagoa/gallery/lagoa (2).jpg"),
         require("@/assets/images/lagoa/gallery/lagoa (3).jpg"),
@@ -38,8 +28,7 @@ export default {
         require("@/assets/images/lagoa/gallery/lagoa (10).jpg"),
         require("@/assets/images/lagoa/gallery/lagoa (11).jpg"),
         require("@/assets/images/lagoa/gallery/lagoa (12).jpg")
-      ],
-      index: null
+      ]
     };
   }
 };
@@ -64,12 +53,6 @@ export default {
   width: 100%;
   height: 250px;
   object-fit: cover;
-}
-
-.gallery__thumbnail-image:hover {
-  opacity: 0.8;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 @media only screen and (max-width: 1000px) {

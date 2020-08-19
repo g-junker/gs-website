@@ -189,6 +189,7 @@ export default {
   color: #fff;
   font-weight: bold;
   font-size: calc(40px + (64 - 40) * ((100vw - 450px) / (1920 - 450)));
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .lagoa-info {

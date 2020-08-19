@@ -1,5 +1,12 @@
 <template>
   <div>
+    <CoolLightBox
+      :items="items"
+      :index="index"
+      @close="index = null"
+      :effect="'fade'"
+    >
+    </CoolLightBox>
     <Header isLogoWhite isTransparent />
     <div class="jardim-header">
       <div class="jardim-container container">
@@ -16,14 +23,12 @@
     </div>
     <div class="jardim__intro">
       <div class="jardim__intro-text">
-        <div class="container">
-          <h1 data-aos="fade-right" data-aos-duration="1000">
-            Condomínio fechado no centro de Tijucas
-          </h1>
-        </div>
+        <h1 data-aos="fade-right" data-aos-duration="1000">
+          Condomínio fechado no centro de Tijucas
+        </h1>
       </div>
       <div
-        class="container jardim__intro-image-container"
+        class="jardim__intro-image-container"
         data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-delay="50"
@@ -69,30 +74,20 @@
         />
       </div>
     </div>
+
     <div class="jardim-floor-plans">
       <h2 class="jardim-floor-plans__headline">Plantas</h2>
       <div class="jardim-floor-plans__images">
         <div
-          class="jardim-floor-plans__item"
-          data-aos="fade-left"
+          v-for="(image, imageIndex) in items"
+          :key="imageIndex"
+          @click="index = imageIndex"
+          :data-aos="imageIndex % 2 ? 'fade-right' : 'fade-left'"
           data-aos-duration="1000"
-        >
-          <img
-            src="@/assets/images/jardim-europa/planta-tipo-a.jpg"
-            class="jardim-floor-plans__item-image"
-          />
-          <p>Planta Apto Tipo A</p>
-        </div>
-        <div
           class="jardim-floor-plans__item"
-          data-aos="fade-right"
-          data-aos-duration="1000"
         >
-          <img
-            src="@/assets/images/jardim-europa/planta-tipo-b.jpg"
-            class="jardim-floor-plans__item-image"
-          />
-          <p>Planta Apto Tipo B</p>
+          <img :src="image.src" class="jardim-floor-plans__item-image" />
+          <p>{{ image.text }}</p>
         </div>
       </div>
     </div>
@@ -120,17 +115,11 @@
         <TheForm />
       </div>
     </div>
-    <MyModal
-      v-if="selectedImage"
-      :url="selectedImage"
-      @close="selectedImage = null"
-    />
   </div>
 </template>
 
 <script>
 import Header from "@/components/TheHeader.vue";
-import MyModal from "@/components/MyModal.vue";
 import TheFinancingSimulator from "@/components/TheFinancingSimulator.vue";
 import TheForm from "@/components/TheForm.vue";
 
@@ -140,6 +129,17 @@ export default {
     return {
       selectedImage: "",
       url: "",
+      items: [
+        {
+          src: require("@/assets/images/jardim-europa/planta-tipo-a.jpg"),
+          text: "Planta Apto Tipo A"
+        },
+        {
+          src: require("@/assets/images/jardim-europa/planta-tipo-b.jpg"),
+          text: "Planta Apto Tipo B"
+        }
+      ],
+      index: null,
       detalhes: [
         {
           icon: require("@/assets/svg/bed.svg"),
@@ -174,8 +174,7 @@ export default {
   components: {
     Header,
     TheFinancingSimulator,
-    TheForm,
-    MyModal
+    TheForm
   }
 };
 </script>
@@ -231,25 +230,20 @@ body {
   margin: 2em 0 4em;
   position: relative;
 }
-
 .jardim__intro-text {
   padding: 3em 7.5%;
   background-color: var(--box-light-color);
   transform: translateY(200px);
 }
-
 .jardim__intro-text h1 {
-  width: 50%;
-  max-width: 400px;
+  width: 35%;
 }
-
 .jardim__intro-image-container {
   position: absolute;
-  right: 0;
+  right: 10%;
   top: 0;
   width: 45%;
 }
-
 .jardim__intro-image {
   width: 100%;
   height: 450px;
@@ -331,6 +325,10 @@ body {
 
 .jardim-floor-plans__item-image {
   width: 100%;
+}
+
+.jardim-floor-plans__item-image:hover {
+  cursor: pointer;
 }
 
 .jardim-localizaçao {

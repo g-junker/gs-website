@@ -16,12 +16,14 @@
     </div>
     <div class="jardim__intro">
       <div class="jardim__intro-text">
-        <h1 data-aos="fade-right" data-aos-duration="1000">
-          Condomínio fechado no centro de Tijucas
-        </h1>
+        <div class="container">
+          <h1 data-aos="fade-right" data-aos-duration="1000">
+            Condomínio fechado no centro de Tijucas
+          </h1>
+        </div>
       </div>
       <div
-        class="jardim__intro-image-container"
+        class="container jardim__intro-image-container"
         data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-delay="50"
@@ -114,7 +116,7 @@
     <TheFinancingSimulator />
     <div class="project-form">
       <h2 class="text-centered">Fale Conosco</h2>
-      <div data-aos="fade-right" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-duration="1000">
         <TheForm />
       </div>
     </div>
@@ -197,10 +199,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.jardim-container {
-  transform: translateY(4em);
+  justify-content: center;
 }
 
 .jardim-logo {
@@ -234,18 +233,19 @@ body {
 }
 
 .jardim__intro-text {
-  padding: 3em 10%;
+  padding: 3em 7.5%;
   background-color: var(--box-light-color);
   transform: translateY(200px);
 }
 
 .jardim__intro-text h1 {
-  width: 35%;
+  width: 50%;
+  max-width: 400px;
 }
 
 .jardim__intro-image-container {
   position: absolute;
-  right: 10%;
+  right: 0;
   top: 0;
   width: 45%;
 }
@@ -342,9 +342,13 @@ body {
 }
 
 @media only screen and (max-width: 750px) {
+  p {
+    line-height: 22px;
+  }
   .jardim-info,
   .jardim__intro {
     flex-direction: column;
+    margin-bottom: 2em;
   }
 
   .jardim-info {
@@ -352,6 +356,7 @@ body {
   }
 
   .jardim__intro-text {
+    padding: 3em 0;
     transform: translateY(0);
   }
 
@@ -371,8 +376,8 @@ body {
   }
 
   .jardim-details {
-    width: 80%;
-    margin: 4em auto;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .jardim-floor-plans {
@@ -414,6 +419,13 @@ body {
     right: 0;
     bottom: 12em;
     margin: auto;
+  }
+
+  .jardim-images {
+    margin-top: 2em;
+  }
+  .jardim-floor-plans {
+    margin-top: 0;
   }
 }
 </style>

@@ -2,12 +2,15 @@
   <div class="carousel__container">
     <transition-group name="fade">
       <div v-for="i in [currentIndex]" :key="i">
-        <router-link
-          :style="{ 'background-image': 'url(' + currentImg + ')' }"
-          class="carousel"
-          :to="{ name: currentLink }"
-        >
-          <div class="carousel__content">
+        <router-link :to="{ name: currentLink }" class="c__super-wrapper">
+          <div class="c__wrapper">
+            <img
+              :src="currentImg"
+              class="c-img"
+              :class="currentIndex % 2 === 0 ? 'c-img--left' : 'c-img--right'"
+            />
+          </div>
+          <div class="carousel__content  container">
             <span class="carousel__content-title">{{ currentTitle }}</span>
             <span class="carousel__content-text">{{ currentText }}</span>
             <button class="button-white">
@@ -108,6 +111,56 @@ export default {
   opacity: 0;
 }
 
+.c__super-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c__wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c-img {
+  width: 115%;
+  min-width: 700px;
+  height: 100%;
+  object-fit: cover;
+  animation-duration: 16s;
+  filter: brightness(85%);
+}
+
+.c-img--left {
+  animation-name: img-slide-left;
+}
+
+.c-img--right {
+  animation-name: img-slide-right;
+}
+
+@keyframes img-slide-left {
+  0% {
+    transform: translateX(-12%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes img-slide-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-12%);
+  }
+}
+
 .carousel__container {
   position: relative;
   height: 100vh;
@@ -129,25 +182,26 @@ export default {
 }
 
 .carousel__content {
+  position: absolute;
   width: 85%;
   margin: auto;
   color: #fff;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .carousel__content-title {
   display: block;
-  margin-top: 2em;
   max-width: 400px;
-  font-size: calc(36px + (64 - 36) * ((100vw - 450px) / (1920 - 450)));
-  font-weight: bold;
+  font-size: calc(40px + (64 - 40) * ((100vw - 450px) / (1920 - 450)));
+  font-weight: 700;
   line-height: 1em;
-  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
 }
 
 .carousel__content-text {
   display: block;
-  margin: 0.5em 0 2em;
+  margin: 0.5em 0 1.5em;
   font-size: 1.3em;
+  font-weight: 500;
 }
 
 .carousel__control {
@@ -167,9 +221,9 @@ export default {
   opacity: 0.75;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 720px) {
   .carousel__content {
-    max-width: 70%;
+    width: 70%;
   }
 }
 </style>

@@ -3,14 +3,20 @@
     <Header isLogoWhite isTransparent />
     <TheCarousel />
     <div class="home container">
-      <div class="home__text" data-aos="fade-right" data-aos-duration="1000">
-        <h1>Qualidade, inovação e sustentabilidade</h1>
-        <p>
+      <div class="home__text">
+        <h1 data-aos="fade-right" data-aos-duration="1000">
+          Qualidade, inovação e sustentabilidade
+        </h1>
+        <p data-aos="fade-left" data-aos-duration="1000">
           A Construtora Gonzaga Sampaio mantém um elevado padrão de qualidade,
           inovação e sustentabilidade. Afinal, um empreendimento de sucesso
           começa pela qualidade e diferenciais encontrados em seu projeto.
         </p>
-        <router-link :to="{ name: 'OurProjects' }" class="text-link"
+        <router-link
+          :to="{ name: 'OurProjects' }"
+          class="text-link"
+          data-aos="fade-right"
+          data-aos-duration="1000"
           >Conheça nossos empreendimentos
           <i class="fas fa-long-arrow-alt-right"></i
         ></router-link>

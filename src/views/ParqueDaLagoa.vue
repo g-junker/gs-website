@@ -127,7 +127,7 @@
     <TheFinancingSimulator />
     <div class="project-form">
       <h2 class="text-centered">Fale Conosco</h2>
-      <div data-aos="fade-right" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-duration="1000">
         <TheForm />
       </div>
     </div>
@@ -188,7 +188,7 @@ export default {
   padding: 0;
   color: #fff;
   font-weight: bold;
-  font-size: calc(32px + (64 - 32) * ((100vw - 450px) / (1920 - 450)));
+  font-size: calc(40px + (64 - 40) * ((100vw - 450px) / (1920 - 450)));
 }
 
 .lagoa-info {
@@ -209,12 +209,12 @@ export default {
 }
 
 .lagoa__text-left {
-  margin-left: 10%;
+  margin-left: 7.5%;
   width: 30%;
 }
 
 .lagoa__text-right {
-  margin-right: 10%;
+  margin-right: 7.5%;
   width: 30%;
 }
 
@@ -244,6 +244,9 @@ export default {
 }
 
 @media only screen and (max-width: 750px) {
+  h1 {
+    margin: 0;
+  }
   .lagoa-info {
     flex-direction: column;
     margin-top: 1em;
@@ -256,7 +259,7 @@ export default {
 
   .lagoa__text-left,
   .lagoa__text-right {
-    width: 80%;
+    width: 85%;
     margin: 0;
     padding: 3em 0;
   }
@@ -284,6 +287,7 @@ export default {
   .lagoa-hero__logo-container {
     width: 75px;
     height: 75px;
+    margin-bottom: 1em;
   }
   .lagoa-hero__text {
     margin-left: 0;

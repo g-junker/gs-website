@@ -54,10 +54,14 @@ li {
     padding: 0 0 0 1em;
 }
 
+button:hover {
+    transition: .3s;
+}
+
 .container {
-    width: 85%;
-    max-width: 1400px;
     margin: auto;
+    width:  85%;
+    max-width: 1400px;
 }
 
 .container-sm {
@@ -164,7 +168,7 @@ li {
 
 .page-header__title--sm {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.2em;    

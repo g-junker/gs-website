@@ -24,6 +24,11 @@
       <nav class="header__nav">
         <ul class="nav">
           <li class="nav__item">
+            <router-link :to="{ name: 'HomePage' }" class="nav__link"
+              >Home</router-link
+            >
+          </li>
+          <li class="nav__item">
             <router-link :to="{ name: 'WhoWeAre' }" class="nav__link"
               >Quem Somos</router-link
             >
@@ -157,7 +162,7 @@ export default {
 }
 
 .header__logo {
-  width: 60vw;
+  width: 55vw;
   max-width: 220px;
 }
 
@@ -247,7 +252,7 @@ export default {
   opacity: 1;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .header {
     overflow-x: hidden;
   }

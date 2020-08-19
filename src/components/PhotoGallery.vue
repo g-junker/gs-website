@@ -1,5 +1,13 @@
 <template>
-  <silent-box :gallery="images" class="gallery"></silent-box>
+  <div class="gallery" data-aos="fade-up" data-aos-duration="1500">
+    <div
+      v-for="(image, index) in images"
+      :key="index"
+      class="gallery__thumbnail"
+    >
+      <img :src="image" class="gallery__thumbnail-image" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -8,18 +16,18 @@ export default {
   data() {
     return {
       images: [
-        { src: require("@/assets/images/lagoa/gallery/lagoa (1).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (2).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (3).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (4).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (5).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (6).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (7).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (8).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (9).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (10).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (11).jpg") },
-        { src: require("@/assets/images/lagoa/gallery/lagoa (12).jpg") }
+        require("@/assets/images/lagoa/gallery/lagoa (1).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (2).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (3).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (4).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (5).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (6).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (7).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (8).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (9).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (10).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (11).jpg"),
+        require("@/assets/images/lagoa/gallery/lagoa (12).jpg")
       ]
     };
   }
@@ -35,36 +43,36 @@ export default {
   margin: 0 auto 4em;
 }
 
-.silentbox-item {
+.gallery__thumbnail {
   width: 25%;
   padding: 0 2px;
   box-sizing: border-box;
 }
 
-.silentbox-item img {
+.gallery__thumbnail-image {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
 @media only screen and (max-width: 1000px) {
-  .silentbox-item {
+  .gallery__thumbnail {
     width: 33.333%;
   }
 
-  .silentbox-item img {
+  .gallery__thumbnail-image {
     height: 200px;
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .silentbox-item {
+  .gallery__thumbnail {
     width: 50%;
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .silentbox-item img {
+  .gallery__thumbnail-image {
     height: 150px;
   }
 }

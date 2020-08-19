@@ -90,6 +90,12 @@ export default {
   display: flex;
 }
 
+.project:hover button {
+  background-color: var(--main-color);
+  color: #fff;
+  transition: 0.5s;
+}
+
 .project__image-container {
   width: 50%;
 }

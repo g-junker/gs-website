@@ -16,9 +16,12 @@
         <span class="footer__contact-phone">(48) 3333-7468</span>
         <span class="footer__contact-separator">|</span
         ><span class="footer__contact-phone">(48) 99194-5415</span>
-        <span class="footer__contact-email">
+        <a
+          class="footer__contact-email"
+          href="mailto:contato@gonzagasampaio.com.br"
+        >
           contato@gonzagasampaio.com.br
-        </span>
+        </a>
       </div>
       <div class="footer__icons">
         <a
@@ -92,6 +95,7 @@ export default {
 }
 
 .footer__contact-separator {
+  font-weight: 600;
   padding: 0 1em;
 }
 
@@ -100,6 +104,10 @@ export default {
   width: 150px;
   justify-content: space-between;
   padding-bottom: 4em;
+}
+
+.footer__icons > a:hover {
+  opacity: 0.4;
 }
 
 .footer__copyright {

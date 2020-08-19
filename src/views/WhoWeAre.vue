@@ -109,7 +109,7 @@ export default {
 .about__text-top,
 .about__text-bottom {
   width: 35%;
-  margin-left: 10%;
+  margin-left: 7.5%;
 }
 
 .about__text-bottom-container {
@@ -184,6 +184,9 @@ export default {
 }
 
 @media only screen and (max-width: 550px) {
+  .mission-vision {
+    margin-top: 1em;
+  }
   .mission-vision__item {
     flex-direction: column;
     text-align: center;

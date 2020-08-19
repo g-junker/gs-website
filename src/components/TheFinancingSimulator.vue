@@ -10,7 +10,12 @@
     </button>
     <transition name="fade-button">
       <div class="simulator__container" v-if="!isHidden">
-        <div v-for="(bank, index) in banks" :key="index">
+        <div
+          v-for="(bank, index) in banks"
+          :key="index"
+          :data-aos="index % 2 ? 'fade-right' : 'fade-left'"
+          data-aos-duration="1000"
+        >
           <a :href="bank.link" target="_blank">
             <img
               :src="bank.img"
@@ -54,6 +59,7 @@ export default {
   padding: 4em 0;
   background-color: var(--main-color);
   text-align: center;
+  transition: height 0.3s;
 }
 
 .simulator__title {
@@ -66,7 +72,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  transition: ease-in 2s all;
 }
 
 .simulator__image-button {
@@ -81,6 +86,7 @@ export default {
 
 .simulator__button {
   margin: auto;
+  transition: all 0.3s ease;
 }
 
 .fade-button-enter-active,

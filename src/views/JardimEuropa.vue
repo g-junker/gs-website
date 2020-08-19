@@ -359,7 +359,8 @@ body {
   }
 
   .jardim__intro-text h1 {
-    width: auto;
+    width: 85%;
+    margin: auto;
   }
 
   .jardim__intro-image-container {

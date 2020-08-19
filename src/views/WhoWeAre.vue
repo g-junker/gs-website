@@ -6,6 +6,7 @@
         class="about__image-container"
         data-aos="fade-left"
         data-aos-duration="1000"
+        data-aos-delay="200"
       >
         <img src="@/assets/images/quem-somos.jpg" alt="" class="about__image" />
       </div>

@@ -15,6 +15,7 @@
           :key="index"
           :data-aos="index % 2 ? 'fade-right' : 'fade-left'"
           data-aos-duration="1000"
+          data-aos-delay="100"
         >
           <a :href="bank.link" target="_blank">
             <img

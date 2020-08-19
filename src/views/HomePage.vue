@@ -7,19 +7,17 @@
         <h1 data-aos="fade-right" data-aos-duration="1000">
           Qualidade, inovação e sustentabilidade
         </h1>
-        <p data-aos="fade-left" data-aos-duration="1000">
-          A Construtora Gonzaga Sampaio mantém um elevado padrão de qualidade,
-          inovação e sustentabilidade. Afinal, um empreendimento de sucesso
-          começa pela qualidade e diferenciais encontrados em seu projeto.
-        </p>
-        <router-link
-          :to="{ name: 'OurProjects' }"
-          class="text-link"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          >Conheça nossos empreendimentos
-          <i class="fas fa-long-arrow-alt-right"></i
-        ></router-link>
+        <div data-aos="fade-left" data-aos-duration="1000">
+          <p>
+            A Construtora Gonzaga Sampaio mantém um elevado padrão de qualidade,
+            inovação e sustentabilidade. Afinal, um empreendimento de sucesso
+            começa pela qualidade e diferenciais encontrados em seu projeto.
+          </p>
+          <router-link :to="{ name: 'OurProjects' }" class="text-link"
+            >Conheça nossos empreendimentos
+            <i class="fas fa-long-arrow-alt-right"></i
+          ></router-link>
+        </div>
       </div>
       <div
         class="home__image-container"

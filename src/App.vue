@@ -34,12 +34,11 @@ export default {
 
 .fade-page-enter-active,
 .fade-page-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.5s;
+  transition: opacity 0.3s ease;
 }
 
 .fade-page-enter,
-.fade-page-leave-active {
+.fade-page-leave-to {
   opacity: 0;
 }
 </style>

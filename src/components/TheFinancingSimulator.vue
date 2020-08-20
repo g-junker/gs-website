@@ -1,5 +1,5 @@
 <template>
-  <div class="simulator">
+  <div class="simulator" :class="{ 'simulator--expanded': !isHidden }">
     <h2 class="simulator__title">Simulador de Financiamento</h2>
     <button
       @click="isHidden = !isHidden"
@@ -8,25 +8,24 @@
     >
       Acesse aqui
     </button>
-    <transition name="fade-button">
-      <div class="simulator__container" v-if="!isHidden">
-        <div
-          v-for="(bank, index) in banks"
-          :key="index"
-          :data-aos="index % 2 ? 'fade-right' : 'fade-left'"
-          data-aos-duration="1000"
-          data-aos-delay="100"
-        >
-          <a :href="bank.link" target="_blank">
-            <img
-              :src="bank.img"
-              alt="bank.name"
-              class="simulator__image-button"
-            />
-          </a>
-        </div>
+
+    <div class="simulator__container" v-if="!isHidden">
+      <div
+        v-for="(bank, index) in banks"
+        :key="index"
+        :data-aos="index % 2 ? 'fade-right' : 'fade-left'"
+        data-aos-duration="1000"
+        data-aos-delay="250"
+      >
+        <a :href="bank.link" target="_blank">
+          <img
+            :src="bank.img"
+            alt="bank.name"
+            class="simulator__image-button"
+          />
+        </a>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -60,7 +59,12 @@ export default {
   padding: 4em 0;
   background-color: var(--main-color);
   text-align: center;
-  transition: height 0.3s;
+  max-height: 100px;
+}
+
+.simulator--expanded {
+  transition: max-height 1.5s ease-in-out;
+  max-height: 500px;
 }
 
 .simulator__title {
@@ -88,13 +92,5 @@ export default {
 .simulator__button {
   margin: auto;
   transition: all 0.3s ease;
-}
-
-.fade-button-enter-active,
-.fade-button-leave-active {
-  transition: opacity 2s;
-}
-.fade-button-enter, .fade-button-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 </style>

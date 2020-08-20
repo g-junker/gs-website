@@ -47,7 +47,7 @@ export default {
           image: require("@/assets/images/home-slide-2.jpg"),
           title: "Terroir Villaggio",
           text: "São Joaquim, SC",
-          link: "/"
+          link: "HomePage"
         }
       ],
       timer: null,

@@ -40,6 +40,8 @@ export default {
       uri: "https://gonzagasampaio.com.br/wp-json/wp/v2/posts/",
       id: this.$route.params.id,
       post: {},
+      title: "",
+      description: "",
       loading: true
     };
   },
@@ -51,6 +53,8 @@ export default {
     getPost() {
       this.$http.get(this.uri + this.id + "?_embed").then(response => {
         this.post = response.data;
+        this.title = this.post.title.rendered;
+        this.description = this.removeTags(this.post.excerpt.rendered);
         this.loading = false;
       });
     },
@@ -63,10 +67,25 @@ export default {
           "sizes"
         ]["full"]["source_url"];
       }
+    },
+    removeTags(string) {
+      if (string != undefined)
+        return string.replace(/(<([^>]+)>)/gi, "").replace("Saiba mais", "");
     }
   },
   mounted() {
     this.getPost();
+  },
+  metaInfo() {
+    return {
+      title: `${this.title}`,
+      meta: [
+        {
+          name: "description",
+          content: `${this.description}`
+        }
+      ]
+    };
   }
 };
 </script>

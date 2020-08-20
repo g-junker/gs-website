@@ -19,6 +19,9 @@ export default {
   name: "PageNotFound",
   components: {
     Header
+  },
+  metaInfo: {
+    title: "Página não encontrada"
   }
 };
 </script>

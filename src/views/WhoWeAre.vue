@@ -84,6 +84,16 @@ export default {
   name: "QuemSomos",
   components: {
     Header
+  },
+  metaInfo: {
+    title: "Quem Somos",
+    meta: [
+      {
+        name: "description",
+        content:
+          "A Gonzaga Sampaio iniciou suas atividades em 2011, com a proposta de desenvolver projetos diferenciados em Santa Catarina, independentemente do padrão de cada empreendimento, focando sempre no conforto dos clientes e no potencial de valorização dos imóveis entregues."
+      }
+    ]
   }
 };
 </script>

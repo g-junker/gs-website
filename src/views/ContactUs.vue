@@ -58,6 +58,15 @@ export default {
   components: {
     Header,
     TheForm
+  },
+  metaInfo: {
+    title: "Fale Conosco",
+    meta: [
+      {
+        name: "description",
+        content: "Entre em contato conosco!"
+      }
+    ]
   }
 };
 </script>

@@ -150,6 +150,16 @@ export default {
     PhotoGallery,
     TheFinancingSimulator,
     TheForm
+  },
+  metaInfo: {
+    title: "Residencial Parque da Lagoa",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Um empreendimento único, que reserva espaço, conforto e segurança, agregando em seu moderno projeto, diferenciais inexistentes nesta região. Sua localização privilegiada, em frente à lagoa, permite seu uso como residência urbana ou de veraneio."
+      }
+    ]
   }
 };
 </script>

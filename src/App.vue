@@ -17,6 +17,10 @@ export default {
   name: "App",
   components: {
     TheFooter
+  },
+  metaInfo: {
+    title: "Gonzaga Sampaio",
+    titleTemplate: "%s | Gonzaga Sampaio"
   }
 };
 </script>

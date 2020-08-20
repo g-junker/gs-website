@@ -175,6 +175,16 @@ export default {
     Header,
     TheFinancingSimulator,
     TheForm
+  },
+  metaInfo: {
+    title: "Residencial Jardim Europa",
+    meta: [
+      {
+        name: "description",
+        content:
+          "O Jardim Europa Residencial contempla o convívio familiar e também oferece espaços para para você e sua família aproveitarem mais a vida."
+      }
+    ]
   }
 };
 </script>

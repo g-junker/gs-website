@@ -72,6 +72,15 @@ export default {
   },
   components: {
     Header
+  },
+  metaInfo: {
+    title: "Nossos Empreendimentos",
+    meta: [
+      {
+        name: "description",
+        content: "Conheça os empreendimentos da Gonzaga Sampaio"
+      }
+    ]
   }
 };
 </script>

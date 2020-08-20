@@ -91,6 +91,16 @@ export default {
         ]["full"]["source_url"];
       }
     }
+  },
+  metaInfo: {
+    title: "Blog",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Fique por dentro das últimas notícias da Gonzaga Sampaio Empreendimentos Imobiliários."
+      }
+    ]
   }
 };
 </script>

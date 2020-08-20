@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form method="post" action="@/views/contact.php" class="form">
+    <form method="post" class="form">
       <div class="form__row">
         <div class="form__col">
           <label for="name" class="form__label">Nome: *</label><br />
@@ -16,8 +16,8 @@
         <input type="email" id="email" class="form__input" required /><br />
       </div>
       <div>
-        <label for="subject" class="form__label">Assunto:</label><br />
-        <input type="text" id="subject" class="form__input" /><br />
+        <label for="assunto" class="form__label">Assunto:</label><br />
+        <input type="text" id="assunto" class="form__input" /><br />
       </div>
       <div>
         <label for="message" class="form__label">Mensagem: *</label><br />

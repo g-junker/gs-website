@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form class="form">
+    <form method="post" action="@/views/contact.php" class="form">
       <div class="form__row">
         <div class="form__col">
           <label for="nome" class="form__label">Nome: *</label><br />

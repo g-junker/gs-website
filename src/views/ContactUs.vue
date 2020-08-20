@@ -17,7 +17,9 @@
           <span class="contact__info--lg"
             >(48) 3333-7468 | (48) 99194-5415</span
           >
-          <p>contato@gonzagasampaio.com.br</p>
+          <a href="mailto:contato@gonzagasampaio.com.br">
+            <p>contato@gonzagasampaio.com.br</p>
+          </a>
         </div>
       </div>
     </div>

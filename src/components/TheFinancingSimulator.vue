@@ -3,7 +3,7 @@
     <h2 class="simulator__title">Simulador de Financiamento</h2>
     <button
       @click="isHidden = !isHidden"
-      class="simulator__button button-white"
+      class="simulator__button button button--white"
       v-if="isHidden"
     >
       Acesse aqui

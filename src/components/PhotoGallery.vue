@@ -14,7 +14,11 @@
         @click="index = imageIndex"
         class="gallery__thumbnail"
       >
-        <img :src="image" class="gallery__thumbnail-image" />
+        <img
+          :src="image"
+          class="thumbnail__image"
+          alt="imagem de miniatura da galeria"
+        />
       </div>
     </div>
   </div>
@@ -60,13 +64,13 @@ export default {
   box-sizing: border-box;
 }
 
-.gallery__thumbnail-image {
+.thumbnail__image {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
-.gallery__thumbnail-image:hover {
+.thumbnail__image:hover {
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
@@ -77,7 +81,7 @@ export default {
     width: 33.333%;
   }
 
-  .gallery__thumbnail-image {
+  .thumbnail__image {
     height: 200px;
   }
 }
@@ -89,7 +93,7 @@ export default {
 }
 
 @media only screen and (max-width: 650px) {
-  .gallery__thumbnail-image {
+  .thumbnail__image {
     height: 150px;
   }
 }

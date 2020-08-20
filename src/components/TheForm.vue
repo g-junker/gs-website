@@ -1,35 +1,42 @@
 <template>
   <div class="container">
-    <form method="post" class="form">
+    <form
+      class="form"
+      action="https://api.formcake.com/api/form/b7e92b83-7228-483f-bd1e-9c403b148962/submission"
+      method="POST"
+    >
+      <input type="hidden" name="_language" value="pt-BR" />
       <div class="form__row">
         <div class="form__col">
-          <label for="name" class="form__label">Nome: *</label><br />
-          <input type="text" id="name" class="form__input" required /><br />
+          <label for="nome" class="form__label">Nome: *</label><br />
+          <input type="text" name="nome" class="form__input" required /><br />
         </div>
         <div class="form__col">
-          <label for="phone" class="form__label">Telefone:</label><br />
-          <input type="tel" id="phone" class="form__input" /><br />
+          <label for="telefone" class="form__label">Telefone:</label><br />
+          <input type="tel" name="telefone" class="form__input" /><br />
         </div>
       </div>
       <div>
         <label for="email" class="form__label">Email: *</label><br />
-        <input type="email" id="email" class="form__input" required /><br />
+        <input type="email" name="email" class="form__input" required /><br />
       </div>
       <div>
         <label for="assunto" class="form__label">Assunto:</label><br />
-        <input type="text" id="assunto" class="form__input" /><br />
+        <input type="text" name="assunto" class="form__input" /><br />
       </div>
       <div>
-        <label for="message" class="form__label">Mensagem: *</label><br />
+        <label for="mensagem" class="form__label">Mensagem: *</label><br />
         <textarea
-          name=""
-          id="message"
+          name="mensagem"
           class="form__input form__textarea"
           height="300px"
+          required
         ></textarea>
       </div>
       <span class="form__footnote">* Campos obrigatórios</span>
-      <button type="submit" class="form__button button-color">Enviar</button>
+      <button type="submit" class="form__button button button--color">
+        Enviar
+      </button>
     </form>
   </div>
 </template>

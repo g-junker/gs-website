@@ -2,35 +2,37 @@
   <div>
     <Header isLogoWhite isTransparent />
     <div class="page-header blog-header">
-      <h1 class="container-sm page-header__title">Blog</h1>
+      <h1 class="container--sm page-header__title">Blog</h1>
     </div>
-    <div v-if="loading">
-      <LoadingSpinner />
-    </div>
+    <LoadingSpinner v-if="loading" />
     <transition-group name="fade-blog">
       <div
-        class="blog-item container-sm"
+        class="blog__item container--sm"
         v-for="(post, index) in posts"
         :key="index"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         <div
-          class="blog-item__image-container"
+          class="blog__image-container"
           v-if="post['_embedded']['wp:featuredmedia'] != undefined"
         >
           <router-link :to="'/blog/' + post.id">
-            <img :src="getFeaturedImage(post)" alt="" />
+            <img
+              :src="getFeaturedImage(post)"
+              :alt="post.title.rendered"
+              class="blog__image"
+            />
           </router-link>
         </div>
         <div>
           <router-link :to="'/blog/' + post.id">
             <h2 v-html="post.title.rendered"></h2>
           </router-link>
-          <div class="blog-item__date">
+          <div class="blog__date">
             {{ getPostDate(post.date) }}
           </div>
-          <div class="blog-item__text">
+          <div class="blog__text">
             {{ removeTags(post.excerpt.rendered) }}(...)
           </div>
           <router-link class="text-link" :to="'/blog/' + post.id">
@@ -110,38 +112,38 @@ export default {
   background-image: url("~@/assets/images/blog-header.jpg");
 }
 
-.blog-item {
+.blog__item {
   display: flex;
   border-bottom: 1px solid var(--box-medium-color);
   padding: 3em 0 2em;
 }
 
-.blog-item:last-child {
+.blog__item:last-child {
   border: none;
   margin-bottom: 3em;
 }
 
-.blog-item__image-container {
+.blog__image-container {
   min-width: 200px;
   max-width: 200px;
   height: 200px;
   margin-right: 2em;
 }
 
-.blog-item__image-container img {
+.blog__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.blog-item__date {
+.blog__date {
   display: block;
   font-size: 0.8em;
   margin: 0.5em 0 2em;
   text-transform: uppercase;
 }
 
-.blog-item__text {
+.blog__text {
   font-size: 0.95em;
   line-height: 1.5em;
   margin: 0;
@@ -156,10 +158,10 @@ export default {
 }
 
 @media only screen and (max-width: 512px) {
-  .blog-item {
+  .blog__item {
     flex-wrap: wrap;
   }
-  .blog-item__image-container {
+  .blog__image-container {
     width: 100%;
     max-width: 100%;
     height: 200px;

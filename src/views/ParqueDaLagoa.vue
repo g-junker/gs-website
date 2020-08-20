@@ -1,23 +1,23 @@
 <template>
   <div>
     <Header isLogoWhite isTransparent />
-    <div class="project-hero lagoa-hero">
-      <div class="lagoa-hero__headline container">
-        <div class="lagoa-hero__logo-container">
+    <div class="project-hero lagoa__hero">
+      <div class="lagoa__headline container">
+        <div class="lagoa__logo-container">
           <img
             src="@/assets/images/logo-lagoa.png"
-            alt=""
-            class="lagoa-hero__logo"
+            alt="logo Parque da Lagoa"
+            class="lagoa__logo"
           />
         </div>
         <h1 class="lagoa-hero__text">Parque da Lagoa</h1>
       </div>
     </div>
-    <div class="lagoa-info container">
+    <div class="project-info container">
       <p><i class="fas fa-building"></i> Condomínio Fechado</p>
       <p><i class="fas fa-map-marker-alt"></i> Imbituba - SC</p>
     </div>
-    <div class="lagoa-image-text-row">
+    <div class="lagoa__row">
       <div
         class="lagoa__text-left"
         data-aos="fade-right"
@@ -40,19 +40,31 @@
         data-aos="fade-left"
         data-aos-duration="1000"
       >
-        <img src="@/assets/images/lagoa/01.jpg" alt="" class="lagoa__image" />
+        <img
+          src="@/assets/images/lagoa/01.jpg"
+          alt="lotes Parque da Lagoa"
+          class="lagoa__image"
+        />
       </div>
     </div>
     <div class="lagoa__banner">
-      <img src="@/assets/images/lagoa/02.jpg" alt="" class="lagoa__image" />
+      <img
+        src="@/assets/images/lagoa/02.jpg"
+        alt="lotes Parque da Lagoa "
+        class="lagoa__image"
+      />
     </div>
-    <div class="lagoa-image-text-row">
+    <div class="lagoa__row">
       <div
         class="lagoa__image-container lagoa--flex-order"
         data-aos="fade-right"
         data-aos-duration="1000"
       >
-        <img src="@/assets/images/lagoa/03.jpg" alt="" class="lagoa__image" />
+        <img
+          src="@/assets/images/lagoa/03.jpg"
+          alt="área de lazer Parque da Lagoa"
+          class="lagoa__image"
+        />
       </div>
       <div
         class="lagoa__text-right"
@@ -74,7 +86,7 @@
         </ul>
       </div>
     </div>
-    <div class="lagoa-image-text-row lagoa-dark-background">
+    <div class="lagoa__row lagoa__row--dark-background">
       <div
         class="lagoa__text-left"
         data-aos="fade-right"
@@ -98,8 +110,8 @@
       >
         <img
           src="@/assets/images/lagoa/04.jpg"
-          alt=""
-          class="lagoa__image lagoa-infraestrutura-image"
+          alt="infraestrutura Parque da Lagoa"
+          class="lagoa__image lagoa__infrastructure-image"
         />
       </div>
     </div>
@@ -169,17 +181,17 @@ export default {
   margin-bottom: 2em;
 }
 
-.lagoa-hero {
+.lagoa__hero {
   background-image: url("~@/assets/images/home-slide-1.jpg");
   background-position: center;
 }
 
-.lagoa-hero__headline {
+.lagoa__headline {
   display: flex;
   align-items: center;
 }
 
-.lagoa-hero__logo-container {
+.lagoa__logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +200,7 @@ export default {
   background-color: #fff;
 }
 
-.lagoa-hero__logo {
+.lagoa__logo {
   width: 90%;
 }
 
@@ -202,17 +214,7 @@ export default {
   text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.lagoa-info {
-  display: flex;
-}
-
-.lagoa-info p {
-  padding-right: 2em;
-  padding-top: 1em;
-  margin: 0;
-}
-
-.lagoa-image-text-row {
+.lagoa__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -244,13 +246,13 @@ export default {
   margin-top: 4em;
 }
 
-.lagoa-dark-background {
+.lagoa__row--dark-background {
   margin: 8em 0 4em;
   background-color: var(--main-color);
   color: #fff;
 }
 
-.lagoa-infraestrutura-image {
+.lagoa__infrastructure-image {
   transform: translateY(-4em);
 }
 
@@ -258,12 +260,8 @@ export default {
   h1 {
     margin: 0;
   }
-  .lagoa-info {
-    flex-direction: column;
-    margin-top: 1em;
-  }
 
-  .lagoa-image-text-row {
+  .lagoa__row {
     flex-direction: column;
     margin: 0;
   }
@@ -287,7 +285,7 @@ export default {
     order: 1;
   }
 
-  .lagoa-infraestrutura-image {
+  .lagoa__infrastructure-image {
     transform: none;
     margin-bottom: 4em;
   }
@@ -295,7 +293,7 @@ export default {
   .lagoa__image {
     height: 350px;
   }
-  .lagoa-hero__logo-container {
+  .lagoa__logo-container {
     width: 75px;
     height: 75px;
     margin-bottom: 1em;
@@ -309,7 +307,7 @@ export default {
     margin-top: 4em;
   }
 
-  .lagoa-hero__headline {
+  .lagoa__headline {
     flex-direction: column;
     align-items: flex-start;
   }

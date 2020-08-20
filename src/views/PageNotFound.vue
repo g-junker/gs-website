@@ -2,12 +2,14 @@
   <div>
     <Header isLogoWhite isBlue />
     <div class="page-not-found">
-      <h1>404</h1>
-      <h2>Página não encontrada</h2>
+      <h1 class="page-not-found__title">404</h1>
+      <h2 class="page-not-found__subtitle">Página não encontrada</h2>
       <p>A página que você está procurando não está disponível.</p>
-      <button class="button-white">
-        <i class="fas fa-long-arrow-alt-left"></i> Voltar à página inicial
-      </button>
+      <router-link to="/">
+        <button class="button button--white page-not-found__button">
+          <i class="fas fa-long-arrow-alt-left"></i> Voltar à página inicial
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -35,7 +37,7 @@ export default {
   min-height: 80vh;
 }
 
-.page-not-found > h1 {
+.page-not-found__title {
   font-size: 5em;
   font-weight: 900;
   margin: 0;
@@ -43,11 +45,11 @@ export default {
   color: #fff;
 }
 
-.page-not-found > h2 {
+.page-not-found__subtitle {
   font-size: 1.8em;
+  letter-spacing: 0;
   margin: 0;
   color: #fff;
-  letter-spacing: 0;
 }
 
 .page-not-found > p {
@@ -57,7 +59,7 @@ export default {
   color: #fff;
 }
 
-.page-not-found > button {
+.page-not-found__button {
   margin: auto;
 }
 </style>

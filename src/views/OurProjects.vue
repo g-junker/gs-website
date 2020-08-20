@@ -2,27 +2,31 @@
   <div>
     <Header isLogoWhite isTransparent />
     <div class="page-header projects-header">
-      <h1 class="container-sm page-header__title">
+      <h1 class="container--sm page-header__title">
         <span class="page-header__title--sm">Conheça nossos</span
         >Empreendimentos
       </h1>
     </div>
-    <div class="container-sm">
+    <div class="container--sm">
       <div
-        class="project__container"
+        class="projects"
         :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'"
         :data-aos-duration="1000"
         v-for="(project, index) in projects"
         :key="index"
       >
-        <router-link :to="project.link" class="project">
+        <router-link :to="project.link" class="project__item">
           <div class="project__image-container">
-            <img :src="project.image" class="project__image" />
+            <img
+              :src="project.image"
+              class="project__image"
+              :alt="project.title"
+            />
           </div>
           <div class="project__content">
             <h2>{{ project.title }}</h2>
-            <span class="project__content-text">{{ project.location }}</span>
-            <p class="project__content-text">{{ project.text }}</p>
+            <span class="project__text">{{ project.location }}</span>
+            <p class="project__text">{{ project.text }}</p>
             <router-link :to="project.link">
               <button class="button">
                 Saiba mais <i class="fas fa-long-arrow-alt-right"></i>
@@ -90,16 +94,16 @@ export default {
   background-image: url("~@/assets/images/nossos-empreendimentos-bg.jpg");
 }
 
-.project__container {
+.projects {
   padding: 3em 0;
   border-bottom: 1px solid var(--box-medium-color);
 }
 
-.project {
+.project__item {
   display: flex;
 }
 
-.project:hover button {
+.project__item:hover button {
   background-color: var(--main-color);
   color: #fff;
   transition: 0.5s;
@@ -121,14 +125,14 @@ export default {
   align-self: flex-end;
 }
 
-.project__content-text {
+.project__text {
   padding: 1em 0 2em;
   font-size: 0.8em;
   line-height: 1.5em;
 }
 
 @media only screen and (max-width: 550px) {
-  .project {
+  .project__item {
     flex-direction: column;
   }
 

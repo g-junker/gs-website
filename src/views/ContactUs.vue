@@ -2,7 +2,7 @@
   <div>
     <Header isLogoWhite isTransparent />
     <div class="page-header contact-header">
-      <h1 class="page-header__title container-sm">Fale Conosco</h1>
+      <h1 class="page-header__title container--sm">Fale Conosco</h1>
     </div>
     <div class="contact__form-container">
       <div class="contact__form">

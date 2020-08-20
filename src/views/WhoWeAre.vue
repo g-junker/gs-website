@@ -8,9 +8,13 @@
         data-aos-duration="1000"
         data-aos-delay="200"
       >
-        <img src="@/assets/images/quem-somos.jpg" alt="" class="about__image" />
+        <img
+          src="@/assets/images/quem-somos.jpg"
+          alt="quem somos"
+          class="about__image"
+        />
       </div>
-      <div class="about__text-top">
+      <div class="about__top">
         <h1>Quem Somos</h1>
         <p>
           A Gonzaga Sampaio iniciou suas atividades em 2011, com a proposta de
@@ -19,8 +23,8 @@
           potencial de valorização dos imóveis entregues.
         </p>
       </div>
-      <div class="about__text-bottom-container">
-        <div class="about__text-bottom">
+      <div class="about__bottom-container">
+        <div class="about__bottom">
           <p>
             Para isso, damos atenção especial quanto à escolha do terreno,
             posição solar do empreendimento, acesso às vias de trânsito civil de
@@ -117,13 +121,13 @@ export default {
   object-fit: cover;
 }
 
-.about__text-top,
-.about__text-bottom {
+.about__top,
+.about__bottom {
   width: 35%;
   margin-left: 7.5%;
 }
 
-.about__text-bottom-container {
+.about__bottom-container {
   background: var(--box-light-color);
   padding: 1em 0;
   margin-top: 1.5em;
@@ -178,18 +182,18 @@ export default {
     margin-top: 1em;
   }
 
-  .about__text-top {
+  .about__top {
     order: -1;
     position: relative;
     width: 80%;
   }
 
-  .about__text-bottom {
+  .about__bottom {
     order: 1;
     width: 80%;
   }
 
-  .about__text-bottom-container {
+  .about__bottom-container {
     margin-top: 0;
   }
 }

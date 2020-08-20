@@ -1,19 +1,24 @@
 <template>
-  <div class="carousel__container">
+  <div class="carousel-container">
     <transition-group name="fade">
       <div v-for="i in [currentIndex]" :key="i">
-        <router-link :to="{ name: currentLink }" class="c__super-wrapper">
-          <div class="c__wrapper">
+        <router-link :to="{ name: currentLink }" class="carousel">
+          <div class="carousel__image-container">
             <img
               :src="currentImg"
-              class="c-img"
-              :class="currentIndex % 2 === 0 ? 'c-img--left' : 'c-img--right'"
+              :alt="'imagem do empreendimento ' + currentTitle"
+              class="carousel__image"
+              :class="
+                currentIndex % 2 === 0
+                  ? 'carousel__image--left'
+                  : 'carousel__image--right'
+              "
             />
           </div>
-          <div class="carousel__content  container">
-            <span class="carousel__content-title">{{ currentTitle }}</span>
-            <span class="carousel__content-text">{{ currentText }}</span>
-            <button class="button-white">
+          <div class="carousel__content container">
+            <span class="carousel__title">{{ currentTitle }}</span>
+            <span class="carousel__text">{{ currentText }}</span>
+            <button class="button button--white">
               Conheça <i class="fas fa-long-arrow-alt-right"></i>
             </button>
           </div>
@@ -111,14 +116,21 @@ export default {
   opacity: 0;
 }
 
-.c__super-wrapper {
+.carousel-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.carousel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.c__wrapper {
+.carousel__image-container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -126,7 +138,7 @@ export default {
   overflow: hidden;
 }
 
-.c-img {
+.carousel__image {
   width: 115%;
   min-width: 700px;
   height: 100%;
@@ -135,11 +147,11 @@ export default {
   filter: brightness(85%);
 }
 
-.c-img--left {
+.carousel__image--left {
   animation-name: img-slide-left;
 }
 
-.c-img--right {
+.carousel__image--right {
   animation-name: img-slide-right;
 }
 
@@ -161,26 +173,6 @@ export default {
   }
 }
 
-.carousel__container {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-}
-
-.carousel {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  flex: 1;
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: all 0.7s;
-}
-
 .carousel__content {
   position: absolute;
   width: 85%;
@@ -189,7 +181,7 @@ export default {
   text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.carousel__content-title {
+.carousel__title {
   display: block;
   max-width: 400px;
   font-size: calc(40px + (64 - 40) * ((100vw - 450px) / (1920 - 450)));
@@ -197,7 +189,7 @@ export default {
   line-height: 1em;
 }
 
-.carousel__content-text {
+.carousel__text {
   display: block;
   margin: 0.5em 0 1.5em;
   font-size: 1.3em;

@@ -1,21 +1,19 @@
 <template>
   <div>
     <Header />
-    <div class="blog-post-header">
-      <p class="container-sm">Blog</p>
+    <div class="post-header">
+      <p class="post-header__text container--sm">Blog</p>
     </div>
-    <div v-if="loading">
-      <LoadingSpinner />
-    </div>
-    <div class="blog-post-body container-sm" v-if="!loading" data-aos="fade">
-      <h1 class="blog-post-headline">
+    <LoadingSpinner v-if="loading" />
+    <div class="post__body container--sm" v-if="!loading" data-aos="fade">
+      <h1 class="post__title">
         {{ post.title.rendered }}
       </h1>
       <span>{{ getPostDate(post.date) }}</span>
       <img
-        class="blog-post-featured-image"
+        class="post__featured-image"
         :src="getFeaturedImage(post)"
-        alt=""
+        :alt="post.title.rendered"
       />
       <div v-html="post.content.rendered"></div>
       <div class="back-blog-post-list">
@@ -91,14 +89,14 @@ export default {
 </script>
 
 <style>
-.blog-post-header {
+.post-header {
   background-color: var(--box-light-color);
   position: relative;
   z-index: -1;
   padding: 0.1em 0;
 }
 
-.blog-post-header p {
+.post-header__text {
   text-transform: uppercase;
   font-size: 0.85em;
   letter-spacing: 0.2em;
@@ -106,33 +104,33 @@ export default {
   margin: auto;
 }
 
-.blog-post-body {
+.post__body {
   margin: 4em auto 3em;
 }
 
-.blog-post-body span {
+.post__body span {
   text-transform: uppercase;
   font-size: 0.9em;
 }
 
-.blog-post-headline {
+.post__title {
   font-size: 1.7em;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0.3em;
 }
 
-.blog-post-body img {
+.post__body img {
   max-width: 100%;
   margin: 2em 0;
 }
 
-.blog-post-featured-image {
+.post__featured-image {
   display: block;
   margin: auto;
 }
 
-.blog-post-body p {
+.post__body p {
   text-align: justify;
 }
 

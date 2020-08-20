@@ -24,7 +24,11 @@
         data-aos="fade-left"
         data-aos-duration="1000"
       >
-        <img src="@/assets/images/home-terroir.jpg" class="home__image" />
+        <img
+          src="@/assets/images/home-terroir.jpg"
+          class="home__image"
+          alt="imagem do empreendimento Terroir Villaggio"
+        />
       </div>
     </div>
   </div>

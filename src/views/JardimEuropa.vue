@@ -10,14 +10,18 @@
     <Header isLogoWhite isTransparent />
     <div class="jardim-header">
       <div class="jardim-container container">
-        <img class="jardim-logo" src="@/assets/images/jardim-europa/logo.png" />
+        <img
+          class="jardim-logo"
+          src="@/assets/images/jardim-europa/logo.png"
+          alt="logo Jardim Europa"
+        />
         <p class="jardim-headline">
           Especialmente planejado para o
           <span>bem estar da sua família</span>
         </p>
       </div>
     </div>
-    <div class="jardim-info container">
+    <div class="project-info container">
       <p><i class="fas fa-building"></i> Condomínio Fechado</p>
       <p><i class="fas fa-map-marker-alt"></i> Imbituba - SC</p>
     </div>
@@ -35,7 +39,7 @@
       >
         <img
           src="@/assets/images/jardim-europa/01.jpg"
-          alt=""
+          alt="fachada Jardim Europa"
           class="jardim__intro-image"
         />
       </div>
@@ -47,7 +51,11 @@
         :key="index"
       >
         <div>
-          <img :src="detalhe.icon" class="jardim-details__icon" />
+          <img
+            :src="detalhe.icon"
+            class="jardim-details__icon"
+            :alt="detalhe.text"
+          />
         </div>
         <p>{{ detalhe.text }}</p>
       </div>
@@ -61,6 +69,7 @@
         <img
           src="@/assets/images/jardim-europa/02.jpg"
           class="jardim-images__image"
+          alt="vista lateral Jardim Europa"
         />
       </div>
       <div
@@ -71,6 +80,7 @@
         <img
           src="@/assets/images/jardim-europa/03.jpg"
           class="jardim-images__image"
+          alt="vista lateral Jardim Europa"
         />
       </div>
     </div>
@@ -86,7 +96,11 @@
           data-aos-duration="1000"
           class="jardim-floor-plans__item"
         >
-          <img :src="image.src" class="jardim-floor-plans__item-image" />
+          <img
+            :src="image.src"
+            class="jardim-floor-plans__item-image"
+            :alt="image.text"
+          />
           <p>{{ image.text }}</p>
         </div>
       </div>
@@ -194,10 +208,6 @@ body {
   overflow-x: hidden;
 }
 
-.jardim-floor-plans__item img {
-  width: 100%;
-}
-
 .jardim-header {
   background-image: url("~@/assets/images/jardim-europa/cover.jpg");
   background-size: cover;
@@ -224,16 +234,6 @@ body {
 
 .jardim-headline span {
   font-weight: bold;
-}
-
-.jardim-info {
-  display: flex;
-}
-
-.jardim-info p {
-  padding-right: 2em;
-  padding-top: 1em;
-  margin: 0;
 }
 
 .jardim__intro {
@@ -353,14 +353,9 @@ body {
   p {
     line-height: 22px;
   }
-  .jardim-info,
   .jardim__intro {
     flex-direction: column;
     margin-bottom: 2em;
-  }
-
-  .jardim-info {
-    margin-top: 1em;
   }
 
   .jardim__intro-text {

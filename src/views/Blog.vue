@@ -54,7 +54,8 @@ export default {
   name: "TheBlog",
   data() {
     return {
-      uri: "https://gonzagasampaio.com.br/wp-json/wp/v2/posts?_embed",
+      uri:
+        "https://gonzagasampaio.com.br/wp-json/wp/v2/posts?per_page=1000?_embed",
       posts: [],
       loading: true
     };

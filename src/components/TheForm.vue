@@ -1,3 +1,4 @@
+  
 <template>
   <div class="container">
     <form
@@ -5,6 +6,8 @@
       action="https://api.formcake.com/api/form/b7e92b83-7228-483f-bd1e-9c403b148962/submission"
       method="POST"
     >
+      <input type="hidden" name="_language" value="pt-BR" />
+    <form class="form">
       <div class="form__row">
         <div class="form__col">
           <label for="nome" class="form__label">Nome: *</label><br />

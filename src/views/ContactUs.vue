@@ -35,8 +35,9 @@
         CEP 88020-010 | Florianópolis, SC
       </p>
       <iframe
+        title="Localização - Construtora Gonzaga Sampaio"
         class="location__map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4969.364454775437!2d-48.700724457368665!3d-28.271918925708125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9526b5d93d9980f7%3A0xb64b33dd6c1c3c2e!2sLoteamento%20Residencial%20Parque%20da%20Lagoa!5e0!3m2!1sen!2sde!4v1596739730384!5m2!1sen!2sde"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.031164553302!2d-48.544518967446876!3d-27.59256339997561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527383c138b278d%3A0x63954ed61be0bcab!2sGonzaga%20Sampaio!5e0!3m2!1spt-PT!2sde!4v1603354348337!5m2!1spt-PT!2sde"
         width="100%"
         height="600"
         frameborder="0"

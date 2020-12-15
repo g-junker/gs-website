@@ -53,7 +53,7 @@ export default {
           text:
             "Um empreendimento único, que reserva espaço, conforto e segurança, agregando em seu moderno projeto, diferenciais até então inexistentes na região.",
           image: require("@/assets/images/empr-terroir.jpg"),
-          link: "#"
+          link: "/empreendimentos/terroir-villaggio"
         },
         {
           title: "Residencial Parque da Lagoa",

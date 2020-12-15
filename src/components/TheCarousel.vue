@@ -9,28 +9,46 @@
               :alt="'imagem do empreendimento ' + currentTitle"
               class="carousel__image"
               :class="
-                currentIndex % 2 === 0
+                currentIndex % 2 === 0 && currentMove
                   ? 'carousel__image--left'
-                  : 'carousel__image--right'
+                  : currentIndex % 2 !== 0 && currentMove
+                  ? 'carousel__image--right'
+                  : ''
               "
             />
           </div>
           <div class="carousel__content container">
             <span class="carousel__title">{{ currentTitle }}</span>
-            <span class="carousel__text">{{ currentText }}</span>
-            <button class="button button--white">
-              Conheça <i class="fas fa-long-arrow-alt-right"></i>
+            <span class="carousel__subtitle">{{ currentSubtitle }}</span>
+            <span
+              v-if="currentText"
+              class="carousel__text"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              >{{ currentText }}</span
+            >
+            <button class="button" :class="{ 'button--white': currentMove }">
+              {{ currentButton }} <i class="fas fa-long-arrow-alt-right"></i>
             </button>
           </div>
+          <span v-if="currentCopyright" class="carousel__copyright">{{
+            currentCopyright
+          }}</span>
         </router-link>
       </div>
     </transition-group>
     <div class="carousel__control">
       <a @click="prev" href="#"
-        ><img class="carousel__control-back" src="@/assets/svg/back.svg"
+        ><img
+          class="carousel__control-back"
+          src="@/assets/svg/back.svg"
+          alt="previous"
       /></a>
       <a @click="next" href="#"
-        ><img class="carousel__control-next" src="@/assets/svg/next.svg"
+        ><img
+          class="carousel__control-next"
+          src="@/assets/svg/next.svg"
+          alt="next"
       /></a>
     </div>
   </div>
@@ -43,16 +61,29 @@ export default {
     return {
       slides: [
         {
+          image: require("@/assets/images/home-slide-financ.jpg"),
+          text:
+            "Todos os nossos produtos são financiados direto pela  construtora",
+          link: "OurProjects",
+          move: false,
+          button: "Conheça Nossos Imóveis",
+          copyright: "Background photo created by ijeab"
+        },
+        {
           image: require("@/assets/images/home-slide-1.jpg"),
           title: "Parque da Lagoa",
-          text: "Imbituba, SC",
-          link: "ParqueDaLagoa"
+          subtitle: "Imbituba, SC",
+          link: "ParqueDaLagoa",
+          move: true,
+          button: "Conheça"
         },
         {
           image: require("@/assets/images/home-slide-2.jpg"),
           title: "Terroir Villaggio",
-          text: "São Joaquim, SC",
-          link: "HomePage"
+          subtitle: "São Joaquim, SC",
+          link: "TerroirVillaggio",
+          move: true,
+          button: "Conheça"
         }
       ],
       timer: null,
@@ -68,7 +99,7 @@ export default {
   methods: {
     startSlide() {
       if (this.timer) clearInterval(this.timer);
-      this.timer = setInterval(this.next, 8000);
+      this.timer = setInterval(this.next, 9000);
     },
     next() {
       if (this.currentIndex == this.slides.length - 1) this.currentIndex = 0;
@@ -88,11 +119,23 @@ export default {
     currentTitle() {
       return this.slides[this.currentIndex].title;
     },
+    currentSubtitle() {
+      return this.slides[this.currentIndex].subtitle;
+    },
     currentText() {
       return this.slides[this.currentIndex].text;
     },
     currentLink() {
       return this.slides[this.currentIndex].link;
+    },
+    currentMove() {
+      return this.slides[this.currentIndex].move;
+    },
+    currentButton() {
+      return this.slides[this.currentIndex].button;
+    },
+    currentCopyright() {
+      return this.slides[this.currentIndex].copyright;
     }
   }
 };
@@ -189,11 +232,31 @@ export default {
   line-height: 1em;
 }
 
-.carousel__text {
+.carousel__subtitle {
   display: block;
   margin: 0.5em 0 1.5em;
   font-size: 1.3em;
   font-weight: 500;
+}
+
+.carousel__text {
+  display: block;
+  font-size: calc(30px + (48 - 30) * ((100vw - 450px) / (1920 - 450)));
+  margin-bottom: 1.5em;
+  max-width: 500px;
+  font-weight: 700;
+  line-height: normal;
+  background-color: var(--main-color);
+  padding: 0.5em;
+}
+
+.carousel__copyright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.5em;
+  font-size: 0.6em;
+  color: #fff;
 }
 
 .carousel__control {

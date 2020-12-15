@@ -27,16 +27,33 @@
         <a
           href="https://www.facebook.com/construtoragonzagasampaio/"
           target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
         >
           <i class="fab fa-facebook-f fa-lg"></i>
         </a>
-        <a href="http://instagram.com" target="_blank">
+        <a
+          href="http://instagram.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+        >
           <i class="fab fa-twitter fa-lg"></i>
         </a>
-        <a href="http://linkedin.com" target="_blank">
+        <a
+          href="http://linkedin.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Linkedin"
+        >
           <i class="fab fa-linkedin-in fa-lg"></i>
         </a>
-        <a href="http://instagram.com" target="_blank">
+        <a
+          href="http://instagram.com"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
           <i class="fab fa-instagram fa-lg"></i>
         </a>
       </div>

@@ -51,6 +51,13 @@ const routes = [
     path: "*",
     name: "PageNotFound",
     component: () => import("@/views/PageNotFound.vue")
+  },
+  {
+    path: "/empreendimentos/terroir-villaggio",
+    name: "TerroirVillaggio",
+    beforeEnter() {
+      window.open("https://www.condominioterroirvillaggio.com.br/", "_blank");
+    }
   }
 ];
 

@@ -20,6 +20,11 @@
           <span>bem estar da sua família</span>
         </p>
       </div>
+      <div class="jardim-header_copyright">
+        <a href="https://www.freepik.com/photos/people"
+          >People photo created by senivpetro</a
+        >
+      </div>
     </div>
     <div class="project-info container">
       <p><i class="fas fa-building"></i> Condomínio Fechado</p>
@@ -109,6 +114,7 @@
       <h2>Localização</h2>
       <p class="location__address">Avenida Emília Ramos, Tijucas - SC</p>
       <iframe
+        title="Localização - Jardim Europa"
         data-aos="fade-up"
         data-aos-duration="1000"
         class="location__map"
@@ -219,6 +225,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.jardim-header_copyright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.5em;
+  font-size: 0.6em;
+  color: #fff;
 }
 
 .jardim-logo {
@@ -391,6 +405,10 @@ body {
   .jardim-header {
     background-position-x: 65%;
     position: relative;
+  }
+
+  .jardim-header_copyright {
+    color: #aaa;
   }
 
   .jardim-container {

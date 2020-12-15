@@ -1,49 +1,99 @@
 <template>
   <div class="container">
-    <form
-      class="form"
-      action="https://api.formcake.com/api/form/b7e92b83-7228-483f-bd1e-9c403b148962/submission"
-      method="POST"
-    >
-      <input type="hidden" name="_language" value="pt-BR" />
+    <form @submit.prevent="submit" class="form" id="contactForm">
       <div class="form__row">
         <div class="form__col">
           <label for="nome" class="form__label">Nome: *</label><br />
-          <input type="text" name="nome" class="form__input" required /><br />
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            class="form__input"
+            required
+          /><br />
         </div>
         <div class="form__col">
           <label for="telefone" class="form__label">Telefone:</label><br />
-          <input type="tel" name="telefone" class="form__input" /><br />
+          <input
+            type="tel"
+            name="telefone"
+            id="telefone"
+            class="form__input"
+          /><br />
         </div>
       </div>
       <div>
         <label for="email" class="form__label">Email: *</label><br />
-        <input type="email" name="email" class="form__input" required /><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form__input"
+          required
+        /><br />
       </div>
       <div>
         <label for="assunto" class="form__label">Assunto:</label><br />
-        <input type="text" name="assunto" class="form__input" /><br />
+        <input
+          type="text"
+          name="assunto"
+          id="assunto"
+          class="form__input"
+        /><br />
       </div>
       <div>
         <label for="mensagem" class="form__label">Mensagem: *</label><br />
         <textarea
           name="mensagem"
+          id="mensagem"
           class="form__input form__textarea"
           height="300px"
           required
         ></textarea>
       </div>
       <span class="form__footnote">* Campos obrigatórios</span>
-      <button type="submit" class="form__button button button--color">
-        Enviar
+      <button
+        type="submit"
+        class="form__button button button--color"
+        :disabled="isLoading"
+      >
+        {{ isLoading ? "Enviando..." : "Enviar" }}
       </button>
     </form>
   </div>
 </template>
 
 <script>
+import env from "@/env";
 export default {
-  name: "TheForm"
+  name: "TheForm",
+  data: () => ({
+    isLoading: false
+  }),
+  methods: {
+    submit() {
+      this.isLoading = true;
+      const form = document.getElementById("contactForm");
+      const formData = new FormData(form);
+      const myData = {};
+      formData.forEach((value, key) => {
+        myData[key] = value;
+      });
+      fetch(env.FORMCAKE_URL, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(myData)
+      })
+        .then(
+          () => alert("Sua mensagem foi enviada com sucesso!"),
+          () => alert("Desculpe, ocorreu um erro.")
+        )
+        .finally(() => ((this.isLoading = false), form.reset()));
+    }
+  }
 };
 </script>
 

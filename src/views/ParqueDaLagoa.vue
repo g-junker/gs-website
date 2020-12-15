@@ -123,6 +123,7 @@
       <h2>Localização</h2>
       <p class="location__address">Porto da Vila, Imbituba - SC</p>
       <iframe
+        title="Localização - Parque da Lagoa"
         data-aos="fade-up"
         data-aos-duration="1000"
         class="location__map"

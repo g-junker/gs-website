@@ -61,6 +61,7 @@ button:hover {
     transition: .3s;
 }
 
+
 .container, .container--sm {
     margin: auto;
     width:  85%;
@@ -127,7 +128,7 @@ button:hover {
 }
 
 .text-link:hover {
-    opacity: .8;
+    color: #2864a1;
 }
 
 .text-centered {

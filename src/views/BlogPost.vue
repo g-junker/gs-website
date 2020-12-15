@@ -35,7 +35,7 @@ export default {
   name: "TheBlogPost",
   data() {
     return {
-      uri: "https://gonzagasampaio.com.br/wp-json/wp/v2/posts/",
+      uri: "https://gonzagasampaio.com.br/wp-blog/wp-json/wp/v2/posts/",
       id: this.$route.params.id,
       post: {},
       title: "",

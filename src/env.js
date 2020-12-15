@@ -1,0 +1,5 @@
+export default {
+  FORMCAKE_URL:
+    process.env.VUE_APP_FORMCAKE_URL ||
+    "https://api.formcake.com/api/form/b7e92b83-7228-483f-bd1e-9c403b148962/submission"
+};

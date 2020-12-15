@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       uri:
-        "https://gonzagasampaio.com.br/wp-json/wp/v2/posts?per_page=1000?_embed",
+        "https://gonzagasampaio.com.br/wp-blog/wp-json/wp/v2/posts?per_page=100&_embed",
       posts: [],
       loading: true
     };
@@ -85,7 +85,10 @@ export default {
     },
     removeTags(string) {
       if (string != undefined)
-        return string.replace(/(<([^>]+)>)/gi, "").replace("Saiba mais", "");
+        return string
+          .replace(/(<([^>]+)>)/gi, "")
+          .replace("Saiba mais", "")
+          .replace("[&hellip;]", "");
     },
     getFeaturedImage(post) {
       if (post["_embedded"]["wp:featuredmedia"] != undefined) {
@@ -116,7 +119,7 @@ export default {
 .blog__item {
   display: flex;
   border-bottom: 1px solid var(--box-medium-color);
-  padding: 3em 0 2em;
+  padding: 3em 0;
 }
 
 .blog__item:last-child {
